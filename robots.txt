@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://best-esim-korea-2026-q6rr.vercel.app/sitemap.xml
