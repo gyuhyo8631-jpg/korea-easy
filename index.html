@@ -260,5 +260,158 @@ function answerQuestion(){
   box.style.display = 'block';
 }
 </script>
+<section id="korea-transport" style="max-width:1100px;margin:80px auto;padding:0 20px;">
+  <div style="margin-bottom:28px;">
+    <div style="font-size:13px;color:#4f9b76;font-weight:700;letter-spacing:.08em;">
+      KOREA TRANSPORT
+    </div>
+    <h2 style="font-size:38px;margin:8px 0 10px;color:#222;">
+      Where are you going?
+    </h2>
+    <p style="color:#666;line-height:1.7;">
+      Simple routes for first-time visitors. Choose your destination and follow the lines.
+    </p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+
+    <!-- Incheon Airport → Myeongdong -->
+    <div class="transport-card">
+      <h3>✈️ Incheon Airport → Myeongdong</h3>
+      <p><b>1.</b> Take AREX to Seoul Station</p>
+      <p><b>2.</b> Transfer to Subway Line 4</p>
+      <p><b>3.</b> Get off at Myeongdong Station</p>
+      <div class="route-badge">AREX → Line 4</div>
+    </div>
+
+    <!-- Incheon Airport → Gangnam -->
+    <div class="transport-card">
+      <h3>✈️ Incheon Airport → Gangnam</h3>
+      <p><b>1.</b> Take AREX to Gimpo Airport</p>
+      <p><b>2.</b> Transfer to Subway Line 9</p>
+      <p><b>3.</b> Transfer toward Gangnam area</p>
+      <div class="route-badge">AREX → Line 9</div>
+    </div>
+
+    <!-- Incheon Airport → Express Bus Terminal -->
+    <div class="transport-card">
+      <h3>✈️ Incheon Airport → Express Bus Terminal</h3>
+      <p><b>1.</b> Take AREX to Gimpo Airport</p>
+      <p><b>2.</b> Transfer to Subway Line 9</p>
+      <p><b>3.</b> Get off at Express Bus Terminal</p>
+      <div class="route-badge">AREX → Line 9</div>
+    </div>
+
+    <!-- Myeongdong → Express Bus Terminal -->
+    <div class="transport-card">
+      <h3>🚇 Myeongdong → Express Bus Terminal</h3>
+      <p><b>1.</b> Take Line 4 to Chungmuro</p>
+      <p><b>2.</b> Transfer to Line 3</p>
+      <p><b>3.</b> Get off at Express Bus Terminal</p>
+      <div class="route-badge">Line 4 → Line 3</div>
+    </div>
+
+    <!-- Gangnam → Express Bus Terminal -->
+    <div class="transport-card">
+      <h3>🚇 Gangnam → Express Bus Terminal</h3>
+      <p><b>1.</b> Take Line 2 to Seoul Nat'l Univ. of Education</p>
+      <p><b>2.</b> Transfer to Line 3</p>
+      <p><b>3.</b> Get off at Express Bus Terminal</p>
+      <div class="route-badge">Line 2 → Line 3</div>
+    </div>
+
+    <!-- Hongdae → Express Bus Terminal -->
+    <div class="transport-card">
+      <h3>🚇 Hongdae → Express Bus Terminal</h3>
+      <p><b>1.</b> Take Line 2 to Dangsan</p>
+      <p><b>2.</b> Transfer to Line 9</p>
+      <p><b>3.</b> Get off at Express Bus Terminal</p>
+      <div class="route-badge">Line 2 → Line 9</div>
+    </div>
+
+    <!-- KTX -->
+    <div class="transport-card">
+      <h3>🚄 Going outside Seoul by KTX?</h3>
+      <p><b>Go to:</b> Seoul Station</p>
+      <p>Subway Line 1 / Line 4 / AREX</p>
+      <p>Popular routes: Busan, Daejeon, Daegu</p>
+      <a class="transport-btn" href="https://www.korail.com/global/eng/intro" target="_blank">
+        Check KTX
+      </a>
+    </div>
+
+    <!-- SRT -->
+    <div class="transport-card">
+      <h3>🚄 Going outside Seoul by SRT?</h3>
+      <p><b>Go to:</b> Suseo Station</p>
+      <p>Subway Line 3 / Suin-Bundang Line</p>
+      <p>Popular routes: Busan, Daegu, Daejeon</p>
+      <a class="transport-btn" href="https://etk.srail.kr" target="_blank">
+        Check SRT
+      </a>
+    </div>
+
+    <!-- Express Bus -->
+    <div class="transport-card">
+      <h3>🚌 Going outside Seoul by Express Bus?</h3>
+      <p><b>Go to:</b> Express Bus Terminal Station</p>
+      <p>Subway Lines 3 / 7 / 9</p>
+      <p>Busan · Daegu · Daejeon · Gangneung · Gyeongju</p>
+      <a class="transport-btn" href="https://www.kobus.co.kr" target="_blank">
+        Check Express Bus
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.transport-card{
+  background:#ffffff;
+  border:1px solid #e7ece9;
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
+
+.transport-card h3{
+  margin:0 0 18px;
+  font-size:20px;
+  color:#222;
+}
+
+.transport-card p{
+  margin:9px 0;
+  color:#555;
+  line-height:1.55;
+  font-size:15px;
+}
+
+.route-badge{
+  margin-top:18px;
+  display:inline-block;
+  background:#e9f5ef;
+  color:#287253;
+  padding:9px 13px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+}
+
+.transport-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:11px 16px;
+  background:#2f7d5b;
+  color:white;
+  text-decoration:none;
+  border-radius:12px;
+  font-weight:700;
+}
+
+.transport-btn:hover{
+  opacity:.88;
+}
+</style>
 </body>
 </html>
