@@ -263,6 +263,155 @@ function answerQuestion(){
 <section id="korea-transport" style="max-width:1100px;margin:80px auto;padding:0 20px;">
   <div style="margin-bottom:28px;">
     <div style="font-size:13px;color:#4f9b76;font-weight:700;letter-spacing:.08em;">
+     <section id="just-landed" style="max-width:1100px;margin:70px auto;padding:0 20px;">
+  <div style="background:#132018;color:white;border-radius:28px;padding:30px;">
+    <div style="font-size:13px;color:#84d6aa;font-weight:800;letter-spacing:.08em;">
+      JUST LANDED?
+    </div>
+
+    <h2 style="font-size:36px;margin:8px 0 10px;">
+      First 30 minutes in Korea
+    </h2>
+
+    <p style="color:#cfd9d3;line-height:1.6;">
+      Choose your terminal, get your T-money card, then pick where you want to go.
+    </p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:24px 0;">
+      <button onclick="showTerminal('t1')" class="airport-btn">Terminal 1</button>
+      <button onclick="showTerminal('t2')" class="airport-btn">Terminal 2</button>
+    </div>
+
+    <div id="t1" class="terminal-box" style="display:none;">
+      <h3>Terminal 1</h3>
+      <p><b>Easy place to look:</b> CU near Exit 2 on 1F</p>
+      <p>Another option: CU near Arrival Hall B on 1F</p>
+      <p>Ask: <b>“T-money card, please.”</b></p>
+    </div>
+
+    <div id="t2" class="terminal-box" style="display:none;">
+      <h3>Terminal 2</h3>
+      <p><b>Easy place to look:</b> GS25 near Arrival Hall A on 1F</p>
+      <p>Other options: CU near Exit 10 or central 1F public area</p>
+      <p>Ask: <b>“T-money card, please.”</b></p>
+    </div>
+
+    <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+      <div class="step-box">
+        <div class="step-no">1</div>
+        <h3>Prepare cash</h3>
+        <p>Keep Korean won ready for card purchase and recharge.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-no">2</div>
+        <h3>Buy T-money</h3>
+        <p>Look for CU, GS25, 7-Eleven or another store showing the T-money logo.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-no">3</div>
+        <h3>Add money</h3>
+        <p>Load a modest amount first and recharge later if needed.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-no">4</div>
+        <h3>Tap correctly</h3>
+        <p>Subway: tap in and out. Bus: tap when boarding and getting off.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:34px;">
+      <h3 style="font-size:24px;margin-bottom:14px;">Where are you going?</h3>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="destination-btn" href="#korea-transport">Myeongdong</a>
+        <a class="destination-btn" href="#korea-transport">Gangnam</a>
+        <a class="destination-btn" href="#korea-transport">Hongdae</a>
+        <a class="destination-btn" href="#korea-transport">Seoul Station</a>
+        <a class="destination-btn" href="#korea-transport">Express Bus Terminal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.airport-btn{
+  border:0;
+  background:#ffffff;
+  color:#132018;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.terminal-box{
+  background:#1d3427;
+  border:1px solid #365846;
+  border-radius:18px;
+  padding:20px;
+  margin-top:10px;
+}
+
+.terminal-box h3{
+  margin-top:0;
+  color:#9be2b7;
+}
+
+.step-box{
+  background:#ffffff;
+  color:#132018;
+  border-radius:18px;
+  padding:20px;
+}
+
+.step-no{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e8f5ee;
+  color:#1f7a4d;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.step-box h3{
+  margin:0 0 8px;
+}
+
+.step-box p{
+  margin:0;
+  line-height:1.55;
+  color:#56635c;
+}
+
+.destination-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#e8f5ee;
+  color:#1f7a4d;
+  padding:11px 15px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.destination-btn:hover{
+  background:#d6ebdf;
+}
+</style>
+
+<script>
+function showTerminal(id){
+  document.getElementById('t1').style.display = 'none';
+  document.getElementById('t2').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+}
+</script>
       KOREA TRANSPORT
     </div>
     <h2 style="font-size:38px;margin:8px 0 10px;color:#222;">
