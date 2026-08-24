@@ -1,36 +1,130 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Seoul Explorer | KOREA EASY</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOREA EASY — Seoul Explorer</title>
+<meta name="description" content="Airport, T-money, subway routes, exits, nearby food, photo spots and Seoul events in one simple guide.">
 <style>
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f6faf7;color:#132018}
-a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;background:#fffffff2;border-bottom:1px solid #e1e9e4;z-index:10}
-nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}.brand span{color:#1f7a4d}
-.hero{padding:56px 0 26px}.eyebrow{display:inline-block;background:#e8f5ee;color:#1f7a4d;padding:8px 12px;border-radius:999px;font-size:.78rem;font-weight:900}
-h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:.98;letter-spacing:-.05em;margin:15px 0}.lead{color:#65736b;max-width:760px;line-height:1.7}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}.tab{border:1px solid #e1e9e4;background:white;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:#132018;color:white}
-.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.card{background:white;border:1px solid #e1e9e4;border-radius:22px;padding:22px}.spot{padding:14px 0;border-top:1px solid #e1e9e4}.spot:first-child{border-top:0}
-.name{font-weight:900}.local{color:#65736b;font-size:.9rem}.facts{color:#4d5b53;line-height:1.7;font-size:.92rem;margin-top:5px}
-.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.btn{padding:10px 12px;border-radius:11px;font-weight:900;font-size:.86rem}.primary{background:#1f7a4d;color:white}.soft{background:#e8f5ee;color:#1f7a4d}
-.official{background:#132018;color:white;border-radius:24px;padding:22px;margin:24px 0}.official a{display:inline-block;background:white;color:#132018;padding:10px 12px;border-radius:11px;font-weight:900;margin:10px 8px 0 0}
-.events{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-bottom:60px}.event{background:white;border:1px solid #e1e9e4;border-radius:18px;padding:18px}.tag{color:#1f7a4d;font-size:.75rem;font-weight:900;text-transform:uppercase}
-@media(max-width:780px){.grid,.events{grid-template-columns:1fr}}
-</style></head>
-<body><header><nav class="wrap"><a class="brand" href="index.html">KOREA <span>EASY</span></a><div><a href="seoul-food-map-v2.html">Food Map</a> · <a href="index.html#korea-transport">Transport</a></div></nav></header>
-<main class="wrap"><section class="hero"><span class="eyebrow">SEOUL EXPLORER</span><h1>Eat. Shoot. Explore.</h1><p class="lead">Choose a Seoul area to see photo spots, nearby food, transport links and official event schedules.</p></section>
+:root{--bg:#f7faf8;--ink:#132018;--muted:#66736b;--green:#1f7a4d;--soft:#e8f5ee;--line:#e1e9e4;--yellow:#ffd34a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}a{color:inherit;text-decoration:none}button{font:inherit}
+.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:900;white-space:nowrap}.brand span{color:var(--green)}.navlinks{display:flex;gap:14px;font-size:.9rem;flex-wrap:wrap;justify-content:flex-end}
+.hero{padding:58px 0 28px}.eyebrow{display:inline-block;padding:8px 12px;background:var(--soft);color:var(--green);border-radius:999px;font-size:.76rem;font-weight:900;letter-spacing:.08em}
+h1{font-size:clamp(2.7rem,6vw,5.8rem);line-height:.97;letter-spacing:-.055em;margin:16px 0}.lead{max-width:780px;color:var(--muted);font-size:1.08rem;line-height:1.75}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 38px}.quick a{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;font-weight:900}
+.section{margin:34px 0 48px}.section h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:0 0 8px}.sub{color:var(--muted);line-height:1.65;margin-bottom:20px}
+.landed{background:#132018;color:#fff;border-radius:28px;padding:26px}.terminalBtns{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.terminalBtns button{border:0;background:#fff;color:#132018;padding:11px 15px;border-radius:12px;font-weight:900;cursor:pointer}.terminalBox{display:none;background:#1d3427;border:1px solid #365846;border-radius:18px;padding:18px;margin-top:10px}.terminalBox.show{display:block}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.step{background:#fff;color:#132018;border-radius:17px;padding:17px}.num{width:32px;height:32px;border-radius:50%;background:#e8f5ee;color:#1f7a4d;display:grid;place-items:center;font-weight:900;margin-bottom:9px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tab{border:1px solid var(--line);background:#fff;padding:10px 13px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:#132018;color:#fff;border-color:#132018}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}.card h3{margin:0 0 12px}.routeStep{padding:10px 0;border-top:1px solid var(--line)}.routeStep:first-child{border-top:0}
+.badge{display:inline-block;background:var(--soft);color:var(--green);padding:8px 11px;border-radius:999px;font-size:.82rem;font-weight:900;margin-top:8px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;padding:10px 12px;border-radius:11px;font-size:.86rem;font-weight:900}.primary{background:var(--green);color:#fff}.soft{background:var(--soft);color:var(--green)}.yellow{background:var(--yellow);color:#132018}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mini{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px}.mini .meta{font-size:.75rem;color:var(--green);font-weight:900;text-transform:uppercase}.mini h4{margin:7px 0 4px}.local{color:var(--muted);font-size:.9rem}.facts{color:#4b5951;font-size:.92rem;line-height:1.7;margin-top:6px}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.event{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.footer{padding:40px 0 70px;color:var(--muted);font-size:.85rem;line-height:1.6}
+@media(max-width:900px){.quick,.steps{grid-template-columns:repeat(2,1fr)}.cards,.events{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}.cards,.events,.quick,.steps{grid-template-columns:1fr}.navlinks{display:none}}
+</style>
+</head>
+<body>
+<header><nav class="wrap"><a class="brand" href="index.html">KOREA <span>EASY</span></a><div class="navlinks"><a href="#landed">Just Landed</a><a href="#transport">Transport</a><a href="#food">Food</a><a href="#photo">Photo</a><a href="#events">Events</a></div></nav></header>
+
+<main class="wrap">
+<section class="hero">
+<span class="eyebrow">SEOUL EXPLORER</span>
+<h1>Land. Move. Eat.<br>Enjoy Seoul.</h1>
+<p class="lead">A simple first-trip guide for international visitors: T-money, airport routes, subway lines, station exits, nearby food, photo spots and event schedules.</p>
+<div class="quick">
+<a href="#landed">✈️ Just Landed</a><a href="#transport">🚇 Get Around</a><a href="#food">🍜 Nearby Food</a><a href="#events">🎉 Seoul Events</a>
+</div>
+</section>
+
+<section id="landed" class="section landed">
+<div class="eyebrow">JUST LANDED?</div><h2>First 30 minutes in Korea</h2>
+<p style="color:#cfd9d3">Choose your terminal, buy T-money, then pick where you want to go.</p>
+<div class="terminalBtns"><button onclick="showTerminal('t1')">Terminal 1</button><button onclick="showTerminal('t2')">Terminal 2</button></div>
+<div id="t1" class="terminalBox"><h3>Terminal 1</h3><p>Look for a convenience store such as CU / GS25 / 7-Eleven in the arrivals/public area. Ask: <b>“T-money card, please.”</b></p><a class="btn yellow" target="_blank" href="https://www.airport.kr/ap_en/index.do">Open Incheon Airport Guide</a></div>
+<div id="t2" class="terminalBox"><h3>Terminal 2</h3><p>Look for a convenience store such as CU / GS25 / 7-Eleven in the arrivals/public area. Ask: <b>“T-money card, please.”</b></p><a class="btn yellow" target="_blank" href="https://www.airport.kr/ap_en/index.do">Open Incheon Airport Guide</a></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><b>Prepare cash</b><div class="facts">Keep Korean won ready for purchase and top-up.</div></div>
+<div class="step"><div class="num">2</div><b>Buy T-money</b><div class="facts">Convenience store or subway vending / recharge point.</div></div>
+<div class="step"><div class="num">3</div><b>Add money</b><div class="facts">Start modestly and recharge later.</div></div>
+<div class="step"><div class="num">4</div><b>Tap correctly</b><div class="facts">Subway: tap in/out. Bus: tap on/off.</div></div>
+</div>
+</section>
+
+<section id="transport" class="section">
+<h2>Where are you going?</h2><p class="sub">Choose an area. Korea Easy shows the airport route, subway line, recommended exit, a visual-check map link, nearby food and photo spots.</p>
 <div id="tabs" class="tabs"></div>
-<section class="grid"><div class="card"><h2 id="title"></h2><div id="spots"></div></div>
-<div class="card"><h2>Plan this area</h2><p class="facts">Jump to nearby food or use the Korea Easy transport guide.</p><div class="btns"><a id="food" class="btn primary" href="#">Nearby Food</a><a class="btn soft" href="index.html#korea-transport">How to get there</a></div></div></section>
-<section class="official"><strong>What's happening in Seoul?</strong><div>Event dates change often, so use these official calendars for the latest schedule.</div><a href="https://english.seoul.go.kr/monthly-event-calendar/" target="_blank">Seoul Monthly Calendar</a><a href="https://english.visitseoul.net/events" target="_blank">Visit Seoul Events</a></section>
-<h2>Current / Ongoing Event Picks</h2><section id="events" class="events"></section></main>
+<div class="grid2">
+<div class="card"><h3 id="routeTitle"></h3><div id="routeList"></div><div class="btns"><a id="stationMap" class="btn primary" target="_blank">Open Station Map</a><a id="exitView" class="btn yellow" target="_blank">Exit Photo / Street View</a></div></div>
+<div class="card"><h3>Exit Guide</h3><div id="exitInfo" class="facts"></div><div class="badge" id="lineBadge"></div></div>
+</div>
+</section>
+
+<section id="food" class="section">
+<h2>Nearby Food</h2><p class="sub">These change automatically when you choose an area above.</p>
+<div id="foodCards" class="cards"></div>
+<div class="btns"><a id="foodSearch" class="btn primary" target="_blank">Search More Nearby Food</a></div>
+</section>
+
+<section id="photo" class="section">
+<h2>Photo Spots</h2><p class="sub">Best-known photo spots around the selected area, with nearest station and suggested time.</p>
+<div id="photoCards" class="cards"></div>
+</section>
+
+<section id="events" class="section">
+<h2>Seoul Events</h2><p class="sub">Schedules change often, so use official Seoul sources for the latest regional events, exhibitions and festivals.</p>
+<div id="eventCards" class="events"></div>
+</section>
+
+<section class="section">
+<h2>Going outside Seoul?</h2>
+<div class="cards">
+<div class="mini"><div class="meta">Express Bus</div><h4>Express Bus Terminal</h4><div class="facts">Lines 3 / 7 / 9<br>Busan · Daegu · Daejeon · Gangneung · Gyeongju</div><div class="btns"><a class="btn primary" target="_blank" href="https://www.kobus.co.kr">Check Express Bus</a></div></div>
+<div class="mini"><div class="meta">KTX</div><h4>Seoul Station</h4><div class="facts">Line 1 / Line 4 / AREX<br>Busan · Daejeon · Daegu and more</div><div class="btns"><a class="btn primary" target="_blank" href="https://www.korail.com/global/eng/intro">Check KTX</a></div></div>
+<div class="mini"><div class="meta">SRT</div><h4>Suseo Station</h4><div class="facts">Line 3 / Suin-Bundang Line<br>Busan · Daegu · Daejeon and more</div><div class="btns"><a class="btn primary" target="_blank" href="https://etk.srail.kr">Check SRT</a></div></div>
+</div>
+</section>
+
+<div class="footer">Korea Easy is an independent travel guide. Subway exits, business hours, event dates and routes can change. Confirm the latest details on the official or map link before traveling.</div>
+</main>
+
 <script>
-const areas={"Myeongdong": [["N Seoul Tower View", "남산서울타워", "Sunset / Night", "Myeongdong", "https://www.google.com/maps/search/?api=1&query=N%20Seoul%20Tower%20View%20Seoul"], ["Myeongdong Cathedral", "명동성당", "Late afternoon", "Myeongdong", "https://www.google.com/maps/search/?api=1&query=Myeongdong%20Cathedral%20Seoul"]], "Hongdae": [["Hongdae Street", "홍대거리", "Evening", "Hongik Univ.", "https://www.google.com/maps/search/?api=1&query=Hongdae%20Street%20Seoul"], ["Yeonnam-dong", "연남동", "Afternoon", "Hongik Univ.", "https://www.google.com/maps/search/?api=1&query=Yeonnam-dong%20Seoul"]], "Gangnam": [["Starfield Library COEX", "별마당도서관", "Daytime", "Samseong", "https://www.google.com/maps/search/?api=1&query=Starfield%20Library%20COEX%20Seoul"], ["Gangnam Style Statue", "강남스타일 조형물", "Evening", "Gangnam", "https://www.google.com/maps/search/?api=1&query=Gangnam%20Style%20Statue%20Seoul"]], "Jongno": [["Bukchon Hanok Village", "북촌한옥마을", "Morning", "Anguk", "https://www.google.com/maps/search/?api=1&query=Bukchon%20Hanok%20Village%20Seoul"], ["Gwanghwamun Square", "광화문광장", "Blue hour / Night", "Gwanghwamun", "https://www.google.com/maps/search/?api=1&query=Gwanghwamun%20Square%20Seoul"], ["Ikseon-dong Hanok Street", "익선동 한옥거리", "Afternoon / Evening", "Jongno 3-ga", "https://www.google.com/maps/search/?api=1&query=Ikseon-dong%20Hanok%20Street%20Seoul"]], "Itaewon": [["Noksapyeong View", "녹사평 일대", "Sunset", "Noksapyeong", "https://www.google.com/maps/search/?api=1&query=Noksapyeong%20View%20Seoul"], ["Itaewon Street", "이태원거리", "Evening", "Itaewon", "https://www.google.com/maps/search/?api=1&query=Itaewon%20Street%20Seoul"]], "Seongsu": [["Seoul Forest", "서울숲", "Morning / Sunset", "Seoul Forest", "https://www.google.com/maps/search/?api=1&query=Seoul%20Forest%20Seoul"], ["Seongsu Cafe Street", "성수 카페거리", "Afternoon", "Seongsu", "https://www.google.com/maps/search/?api=1&query=Seongsu%20Cafe%20Street%20Seoul"]], "Jamsil": [["Seokchon Lake", "석촌호수", "Sunset", "Jamsil", "https://www.google.com/maps/search/?api=1&query=Seokchon%20Lake%20Seoul"], ["Lotte World Tower View", "롯데월드타워 뷰", "Night", "Jamsil", "https://www.google.com/maps/search/?api=1&query=Lotte%20World%20Tower%20View%20Seoul"]], "Dongdaemun": [["DDP", "동대문디자인플라자", "Blue hour / Night", "Dongdaemun History & Culture Park", "https://www.google.com/maps/search/?api=1&query=DDP%20Seoul"], ["Gwangjang Market", "광장시장", "Day / Evening", "Jongno 5-ga", "https://www.google.com/maps/search/?api=1&query=Gwangjang%20Market%20Seoul"]], "Yeouido": [["Yeouido Hangang Park", "여의도한강공원", "Sunset / Night", "Yeouinaru", "https://www.google.com/maps/search/?api=1&query=Yeouido%20Hangang%20Park%20Seoul"], ["The Hyundai Seoul", "더현대서울", "Daytime", "Yeouido", "https://www.google.com/maps/search/?api=1&query=The%20Hyundai%20Seoul%20Seoul"]]}; const events=[["Festival", "2026 Hangang River Festival – Summer", "Aug 2026", "Hangang / Multiple", "https://english.seoul.go.kr/category/life-information/cultural-event/"], ["Exhibition", "KAWS: FRIENDS AND NEIGHBORS", "Jul 23 – Dec 27, 2026", "Seoul", "https://english.visitseoul.net/events"], ["Exhibition", "Martin Parr: We Are Martin Parr", "Jul 16 – Oct 18, 2026", "Seoul", "https://english.visitseoul.net/events"], ["Exhibition", "BANKSY: Still Here", "Jul 22 – Nov 3, 2026", "Seoul", "https://english.visitseoul.net/events"]]; let current=Object.keys(areas)[0];
-function render(){
- document.getElementById('tabs').innerHTML=Object.keys(areas).map(a=>`<button class="tab ${a===current?'active':''}" onclick="current='${a}';render()">${a}</button>`).join('');
- document.getElementById('title').textContent=current+' Photo Spots';
- document.getElementById('food').href='seoul-food-map-v2.html?area='+encodeURIComponent(current);
- document.getElementById('spots').innerHTML=areas[current].map(s=>`<div class="spot"><div class="name">📸 ${s[0]}</div><div class="local">${s[1]}</div><div class="facts">Best time: ${s[2]}<br>🚇 ${s[3]}</div><div class="btns"><a class="btn primary" href="${s[4]}" target="_blank">Open Map</a><a class="btn soft" href="seoul-food-map-v2.html?area=${encodeURIComponent(current)}">Nearby Food</a></div></div>`).join('');
+const areas={"Myeongdong": {"station": "Myeongdong Station", "line": "Line 4", "exit": "Exit 6", "landmark": "Myeongdong shopping street / Myeongdong Cathedral area", "route_from_airport": ["AREX → Seoul Station", "Transfer to Line 4", "Get off at Myeongdong Station", "Use Exit 6 for central Myeongdong"], "photo": [["N Seoul Tower View", "남산서울타워", "Sunset / Night", "Myeongdong Station", "https://www.google.com/maps/search/?api=1&query=N%20Seoul%20Tower%20View%20Seoul"], ["Myeongdong Cathedral", "명동성당", "Late afternoon", "Myeongdong Station", "https://www.google.com/maps/search/?api=1&query=Myeongdong%20Cathedral%20Seoul"]], "food": [["Myeongdong Kyoja", "명동교자", "Noodles", "₩", "https://www.google.com/maps/search/?api=1&query=Myeongdong%20Kyoja%20Seoul"], ["Hadongkwan Myeongdong", "하동관", "Korean", "₩₩", "https://www.google.com/maps/search/?api=1&query=Hadongkwan%20Myeongdong%20Seoul"], ["Wangbijib Myeongdong", "왕비집 명동", "Korean BBQ", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Wangbijib%20Myeongdong%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Myeongdong%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Myeongdong%20Station%20Exit%206%20Seoul"}, "Hongdae": {"station": "Hongik Univ. Station", "line": "Line 2 / AREX / Gyeongui-Jungang", "exit": "Exit 9", "landmark": "Hongdae main shopping / nightlife street", "route_from_airport": ["AREX all-stop train → Hongik Univ. Station", "No transfer needed", "Use Exit 9 for central Hongdae"], "photo": [["Hongdae Street", "홍대거리", "Evening", "Hongik Univ. Station", "https://www.google.com/maps/search/?api=1&query=Hongdae%20Street%20Seoul"], ["Yeonnam-dong", "연남동", "Afternoon", "Hongik Univ. Station", "https://www.google.com/maps/search/?api=1&query=Yeonnam-dong%20Seoul"]], "food": [["Doma Hongdae", "도마 홍대", "Korean BBQ", "₩₩", "https://www.google.com/maps/search/?api=1&query=Doma%20Hongdae%20Seoul"], ["Myth Jokbal Hongdae", "미쓰족발 홍대", "Korean", "₩₩", "https://www.google.com/maps/search/?api=1&query=Myth%20Jokbal%20Hongdae%20Seoul"], ["Thanks Nature Cafe", "땡스네이쳐카페", "Cafe", "₩₩", "https://www.google.com/maps/search/?api=1&query=Thanks%20Nature%20Cafe%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Hongik%20Univ.%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Hongik%20Univ.%20Station%20Exit%209%20Seoul"}, "Gangnam": {"station": "Gangnam Station", "line": "Line 2 / Shinbundang", "exit": "Exit 10 or 11", "landmark": "Gangnam-daero shopping / nightlife area", "route_from_airport": ["AREX → Gimpo Airport", "Transfer to Line 9", "Transfer toward Gangnam area", "Continue to Gangnam Station"], "photo": [["Gangnam-daero", "강남대로", "Night", "Gangnam Station", "https://www.google.com/maps/search/?api=1&query=Gangnam-daero%20Seoul"], ["COEX Starfield Library", "별마당도서관", "Daytime", "Samseong Station", "https://www.google.com/maps/search/?api=1&query=COEX%20Starfield%20Library%20Seoul"]], "food": [["Yanggood Korean Halal BBQ", "양국", "Halal BBQ", "₩₩", "https://www.google.com/maps/search/?api=1&query=Yanggood%20Korean%20Halal%20BBQ%20Seoul"], ["Samwon Garden", "삼원가든", "Korean BBQ", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Samwon%20Garden%20Seoul"], ["Jungsik Seoul", "정식당", "Fine Dining", "₩₩₩₩", "https://www.google.com/maps/search/?api=1&query=Jungsik%20Seoul%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Gangnam%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Gangnam%20Station%20Exit%2010%20or%2011%20Seoul"}, "Jongno": {"station": "Anguk Station", "line": "Line 3", "exit": "Exit 2 or 3", "landmark": "Bukchon / Insadong / palace area", "route_from_airport": ["AREX → Seoul Station", "Transfer to Line 4 → Chungmuro", "Transfer to Line 3", "Get off at Anguk Station"], "photo": [["Bukchon Hanok Village", "북촌한옥마을", "Morning", "Anguk Station", "https://www.google.com/maps/search/?api=1&query=Bukchon%20Hanok%20Village%20Seoul"], ["Ikseon-dong Hanok Street", "익선동", "Afternoon / Evening", "Jongno 3-ga", "https://www.google.com/maps/search/?api=1&query=Ikseon-dong%20Hanok%20Street%20Seoul"], ["Gwanghwamun Square", "광화문광장", "Blue hour / Night", "Gwanghwamun Station", "https://www.google.com/maps/search/?api=1&query=Gwanghwamun%20Square%20Seoul"]], "food": [["Tosokchon Samgyetang", "토속촌삼계탕", "Korean", "₩₩", "https://www.google.com/maps/search/?api=1&query=Tosokchon%20Samgyetang%20Seoul"], ["Imun Seolleongtang", "이문설농탕", "Korean", "₩₩", "https://www.google.com/maps/search/?api=1&query=Imun%20Seolleongtang%20Seoul"], ["Sanchon", "산촌", "Vegetarian / Temple", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Sanchon%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Anguk%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Anguk%20Station%20Exit%202%20or%203%20Seoul"}, "Itaewon": {"station": "Itaewon Station", "line": "Line 6", "exit": "Exit 1 or 2", "landmark": "Itaewon main street", "route_from_airport": ["AREX → Gongdeok", "Transfer to Line 6", "Get off at Itaewon Station"], "photo": [["Itaewon Street", "이태원거리", "Evening", "Itaewon Station", "https://www.google.com/maps/search/?api=1&query=Itaewon%20Street%20Seoul"], ["Noksapyeong View", "녹사평 일대", "Sunset", "Noksapyeong Station", "https://www.google.com/maps/search/?api=1&query=Noksapyeong%20View%20Seoul"]], "food": [["Petra", "페트라", "Middle Eastern", "₩₩", "https://www.google.com/maps/search/?api=1&query=Petra%20Seoul"], ["Plant Cafe & Kitchen", "플랜트", "Vegan", "₩₩", "https://www.google.com/maps/search/?api=1&query=Plant%20Cafe%20%26%20Kitchen%20Seoul"], ["Maple Tree House Itaewon", "단풍나무집", "Korean BBQ", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Maple%20Tree%20House%20Itaewon%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Itaewon%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Itaewon%20Station%20Exit%201%20or%202%20Seoul"}, "Seongsu": {"station": "Seongsu Station", "line": "Line 2", "exit": "Exit 3 or 4", "landmark": "Seongsu cafe / pop-up district", "route_from_airport": ["AREX → Hongik Univ.", "Transfer to Line 2", "Get off at Seongsu Station"], "photo": [["Seoul Forest", "서울숲", "Morning / Sunset", "Seoul Forest Station", "https://www.google.com/maps/search/?api=1&query=Seoul%20Forest%20Seoul"], ["Seongsu Cafe Street", "성수 카페거리", "Afternoon", "Seongsu Station", "https://www.google.com/maps/search/?api=1&query=Seongsu%20Cafe%20Street%20Seoul"]], "food": [["Somunnan Seongsu Gamjatang", "소문난성수감자탕", "Korean", "₩", "https://www.google.com/maps/search/?api=1&query=Somunnan%20Seongsu%20Gamjatang%20Seoul"], ["Cafe Onion Seongsu", "카페 어니언 성수", "Cafe", "₩₩", "https://www.google.com/maps/search/?api=1&query=Cafe%20Onion%20Seongsu%20Seoul"], ["Center Coffee Seoul Forest", "센터커피 서울숲", "Cafe", "₩₩", "https://www.google.com/maps/search/?api=1&query=Center%20Coffee%20Seoul%20Forest%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Seongsu%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Seongsu%20Station%20Exit%203%20or%204%20Seoul"}, "Jamsil": {"station": "Jamsil Station", "line": "Line 2 / Line 8", "exit": "Exit 1 or 2", "landmark": "Lotte World / Seokchon Lake", "route_from_airport": ["AREX → Gimpo Airport", "Transfer to Line 9", "Transfer toward Line 2", "Get off at Jamsil Station"], "photo": [["Seokchon Lake", "석촌호수", "Sunset", "Jamsil Station", "https://www.google.com/maps/search/?api=1&query=Seokchon%20Lake%20Seoul"], ["Lotte World Tower", "롯데월드타워", "Night", "Jamsil Station", "https://www.google.com/maps/search/?api=1&query=Lotte%20World%20Tower%20Seoul"]], "food": [["Bicena", "비채나", "Fine Dining", "₩₩₩₩", "https://www.google.com/maps/search/?api=1&query=Bicena%20Seoul"], ["Bongpiyang Jamsil", "봉피양 잠실", "Korean", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Bongpiyang%20Jamsil%20Seoul"], ["Knotted World", "노티드월드", "Dessert", "₩₩", "https://www.google.com/maps/search/?api=1&query=Knotted%20World%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Jamsil%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Jamsil%20Station%20Exit%201%20or%202%20Seoul"}, "Dongdaemun": {"station": "Dongdaemun History & Culture Park", "line": "Line 2 / Line 4 / Line 5", "exit": "Exit 1 or 14", "landmark": "DDP / Dongdaemun shopping area", "route_from_airport": ["AREX → Seoul Station", "Transfer to Line 4", "Get off at Dongdaemun History & Culture Park"], "photo": [["DDP", "동대문디자인플라자", "Blue hour / Night", "Dongdaemun History & Culture Park", "https://www.google.com/maps/search/?api=1&query=DDP%20Seoul"], ["Gwangjang Market", "광장시장", "Day / Evening", "Jongno 5-ga", "https://www.google.com/maps/search/?api=1&query=Gwangjang%20Market%20Seoul"]], "food": [["Jinokhwa Halmae Dakhanmari", "진옥화할매원조닭한마리", "Chicken", "₩₩", "https://www.google.com/maps/search/?api=1&query=Jinokhwa%20Halmae%20Dakhanmari%20Seoul"], ["Kyochon Chicken Dongdaemun", "교촌치킨 동대문", "Chicken", "₩₩", "https://www.google.com/maps/search/?api=1&query=Kyochon%20Chicken%20Dongdaemun%20Seoul"], ["Gwangjang Market Food Alley", "광장시장 먹자골목", "Street Food", "₩", "https://www.google.com/maps/search/?api=1&query=Gwangjang%20Market%20Food%20Alley%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Dongdaemun%20History%20%26%20Culture%20Park%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Dongdaemun%20History%20%26%20Culture%20Park%20Exit%201%20or%2014%20Seoul"}, "Yeouido": {"station": "Yeouinaru Station", "line": "Line 5", "exit": "Exit 2 or 3", "landmark": "Yeouido Hangang Park", "route_from_airport": ["AREX → Gongdeok", "Transfer to Line 5", "Get off at Yeouinaru Station"], "photo": [["Yeouido Hangang Park", "여의도한강공원", "Sunset / Night", "Yeouinaru Station", "https://www.google.com/maps/search/?api=1&query=Yeouido%20Hangang%20Park%20Seoul"], ["The Hyundai Seoul", "더현대서울", "Daytime", "Yeouido Station", "https://www.google.com/maps/search/?api=1&query=The%20Hyundai%20Seoul%20Seoul"]], "food": [["Jinjujip", "진주집", "Noodles", "₩", "https://www.google.com/maps/search/?api=1&query=Jinjujip%20Seoul"], ["Hanmiok Yeouido", "한미옥 여의도", "Korean BBQ", "₩₩₩", "https://www.google.com/maps/search/?api=1&query=Hanmiok%20Yeouido%20Seoul"], ["Cafe Layered The Hyundai", "카페 레이어드", "Dessert", "₩₩", "https://www.google.com/maps/search/?api=1&query=Cafe%20Layered%20The%20Hyundai%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Yeouinaru%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Yeouinaru%20Station%20Exit%202%20or%203%20Seoul"}, "Express Bus Terminal": {"station": "Express Bus Terminal Station", "line": "Line 3 / Line 7 / Line 9", "exit": "Exit 1 / 7 / 8 depending on terminal", "landmark": "Seoul Express Bus Terminal / Central City", "route_from_airport": ["AREX → Gimpo Airport", "Transfer to Line 9", "Get off at Express Bus Terminal"], "photo": [["Seoul Express Bus Terminal", "서울고속버스터미널", "Daytime", "Express Bus Terminal Station", "https://www.google.com/maps/search/?api=1&query=Seoul%20Express%20Bus%20Terminal%20Seoul"], ["Central City", "센트럴시티", "Daytime", "Express Bus Terminal Station", "https://www.google.com/maps/search/?api=1&query=Central%20City%20Seoul"]], "food": [["Shinsegae Gangnam Food Hall", "신세계 강남 푸드홀", "Food Hall", "₩₩", "https://www.google.com/maps/search/?api=1&query=Shinsegae%20Gangnam%20Food%20Hall%20Seoul"], ["Famille Station Restaurants", "파미에스테이션", "Mixed", "₩₩", "https://www.google.com/maps/search/?api=1&query=Famille%20Station%20Restaurants%20Seoul"], ["Goto Mall Food Zone", "고투몰 푸드존", "Casual", "₩", "https://www.google.com/maps/search/?api=1&query=Goto%20Mall%20Food%20Zone%20Seoul"]], "station_map": "https://www.google.com/maps/search/?api=1&query=Express%20Bus%20Terminal%20Station%20Seoul", "exit_view": "https://www.google.com/maps/search/?api=1&query=Express%20Bus%20Terminal%20Station%20Exit%201%20/%207%20/%208%20depending%20on%20terminal%20Seoul"}};
+const events=[["Seoul Monthly Event Calendar", "Official Seoul event calendar", "https://english.seoul.go.kr/monthly-event-calendar/"], ["Visit Seoul Events", "Official tourism events & exhibitions", "https://english.visitseoul.net/events"], ["Seoul Cultural Events", "City cultural event notices", "https://english.seoul.go.kr/category/life-information/cultural-event/"]];
+let current='Myeongdong';
+
+function showTerminal(id){
+ document.querySelectorAll('.terminalBox').forEach(x=>x.classList.remove('show'));
+ document.getElementById(id).classList.add('show');
 }
-document.getElementById('events').innerHTML=events.map(e=>`<article class="event"><div class="tag">${e[0]}</div><h3>${e[1]}</h3><p>📅 ${e[2]}</p><p>📍 ${e[3]}</p><a class="btn soft" href="${e[4]}" target="_blank">Official details</a></article>`).join('');
-render();
-</script></body></html>
+
+function renderTabs(){
+ document.getElementById('tabs').innerHTML=Object.keys(areas).map(a=>`<button class="tab ${a===current?'active':''}" onclick="current='${a}';renderAll()">${a}</button>`).join('');
+}
+
+function renderAll(){
+ renderTabs();
+ const x=areas[current];
+
+ document.getElementById('routeTitle').textContent='Incheon Airport → '+current;
+ document.getElementById('routeList').innerHTML=x.route_from_airport.map((r,i)=>`<div class="routeStep"><b>${i+1}.</b> ${r}</div>`).join('');
+ document.getElementById('stationMap').href=x.station_map;
+ document.getElementById('exitView').href=x.exit_view;
+ document.getElementById('exitInfo').innerHTML=`<b>${x.station}</b><br>Recommended: <b>${x.exit}</b><br>Look for: ${x.landmark}<br><br>Use “Exit Photo / Street View” to visually check the station exit and surrounding street before you walk.`;
+ document.getElementById('lineBadge').textContent=x.line;
+
+ document.getElementById('foodCards').innerHTML=x.food.map(f=>`<article class="mini"><div class="meta">${f[2]}</div><h4>${f[0]}</h4><div class="local">${f[1]}</div><div class="facts">Price: ${f[3]}</div><div class="btns"><a class="btn primary" target="_blank" href="${f[4]}">Open Map</a></div></article>`).join('');
+ document.getElementById('foodSearch').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(current+' restaurants Seoul');
+
+ document.getElementById('photoCards').innerHTML=x.photo.map(p=>`<article class="mini"><div class="meta">Photo Spot</div><h4>${p[0]}</h4><div class="local">${p[1]}</div><div class="facts">Best time: ${p[2]}<br>🚇 ${p[3]}</div><div class="btns"><a class="btn primary" target="_blank" href="${p[4]}">Open Map</a></div></article>`).join('');
+}
+
+document.getElementById('eventCards').innerHTML=events.map(e=>`<article class="event"><div class="meta">Official Source</div><h3>${e[0]}</h3><div class="facts">${e[1]}</div><div class="btns"><a class="btn soft" target="_blank" href="${e[2]}">Open Schedule</a></div></article>`).join('');
+
+renderAll();
+</script>
+</body></html>
