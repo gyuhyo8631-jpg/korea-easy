@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -18,8 +18,8 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 .exitPhoto{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;border:1px solid var(--line);margin-top:12px;background:#edf2ef}.credit{font-size:.72rem;color:var(--muted);line-height:1.45;margin-top:7px}
 .foodTools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}.foodTools input,.foodTools select{padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:white}.foodTools input{flex:1;min-width:220px}.foodGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.mini{background:white;border:1px solid var(--line);border-radius:17px;padding:16px}.meta{font-size:.72rem;color:var(--g);font-weight:900;text-transform:uppercase}.mini h4{margin:7px 0 3px}.local{color:var(--muted);font-size:.88rem}.facts{color:#4c5951;font-size:.9rem;line-height:1.7;margin-top:6px}.pager{display:flex;justify-content:center;margin-top:18px}
 .taxiBox{display:grid;grid-template-columns:1fr 1fr;gap:15px}.formRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;font-size:.78rem;font-weight:900;color:var(--muted);margin-bottom:6px}.field select,.field input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:white}.result{background:#132018;color:white;border-radius:20px;padding:20px}.big{font-size:2rem;font-weight:950;margin:7px 0}.warn{background:#fff4d6;border:1px solid #f1d277;border-radius:16px;padding:15px;line-height:1.6;margin-top:12px}.official{font-size:.8rem;color:var(--muted);line-height:1.6}
-.events{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer{padding:10px 0 70px;color:var(--muted);font-size:.82rem;line-height:1.6}
-@media(max-width:980px){.quick{grid-template-columns:repeat(3,1fr)}.foodGrid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.grid2,.taxiBox{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.foodGrid,.events{grid-template-columns:repeat(2,1fr)}.links{display:none}}@media(max-width:520px){.quick,.steps,.foodGrid,.events,.formRow{grid-template-columns:1fr}}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hotGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hotCard{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.hotBadge{display:inline-block;background:#fff4d6;color:#8a5b00;padding:6px 9px;border-radius:999px;font-size:.72rem;font-weight:900}.hotCard h4{margin:9px 0 3px}.footer{padding:10px 0 70px;color:var(--muted);font-size:.82rem;line-height:1.6}
+@media(max-width:980px){.quick{grid-template-columns:repeat(3,1fr)}.foodGrid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.grid2,.taxiBox{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.foodGrid,.events,.hotGrid{grid-template-columns:repeat(2,1fr)}.links{display:none}}@media(max-width:520px){.quick,.steps,.foodGrid,.events,.hotGrid,.formRow{grid-template-columns:1fr}}
 </style></head>
 <body>
 <header><nav class="wrap">
@@ -30,7 +30,7 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 <a href="#transport" data-i18n="nav_subway">Subway</a>
 <a href="#taxi" data-i18n="nav_taxi">Taxi</a>
 <a href="#food" data-i18n="nav_food">Food</a>
-<a href="#photo" data-i18n="nav_photo">Photo</a>
+<a href="#photo" data-i18n="nav_photo">Photo</a><a href="#hot-now" data-i18n="nav_hot">Hot Now</a>
 <a href="#events" data-i18n="nav_events">Events</a>
 </div>
 <div class="langswitch">
@@ -114,6 +114,13 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 <div id="photoGrid" class="foodGrid"></div>
 </section>
 
+<section id="hot-now" class="sec">
+<span class="eyebrow" data-i18n="hot_badge">HOT NOW · SEOUL 2026</span>
+<h2 data-i18n="hot_title">Trending Photo Spots & Hot Places</h2>
+<p class="sub" data-i18n="hot_desc">Classic icons plus neighborhoods that are especially popular right now. Every card includes the nearest station, recommended exit, best time and map.</p>
+<div id="hotGrid" class="hotGrid"></div>
+</section>
+
 <section id="events" class="sec"><h2 data-i18n="events_title">What's happening in Seoul?</h2><p class="sub" data-i18n="events_desc">Event schedules change constantly. These buttons always send travelers to official current calendars rather than leaving stale dates on the site.</p>
 <div class="events"><div class="mini"><div class="meta">Official Seoul</div><h4 data-i18n="monthly_calendar">Monthly Event Calendar</h4><div class="facts" data-i18n="monthly_desc">Citywide festivals, performances and cultural schedules.</div><div class="btns"><a class="btn green" target="_blank" href="https://english.seoul.go.kr/monthly-event-calendar/" data-i18n="open_calendar">Open Calendar</a></div></div>
 <div class="mini"><div class="meta">Official Tourism</div><h4 data-i18n="visit_events">Visit Seoul Events</h4><div class="facts" data-i18n="visit_desc">Events, exhibitions and visitor information.</div><div class="btns"><a class="btn green" target="_blank" href="https://english.visitseoul.net/events" data-i18n="open_events">Open Events</a></div></div>
@@ -177,7 +184,7 @@ function calcTaxi(){const dest=document.getElementById('to').value,type=document
 
 const I18N = {
  en:{
-  nav_home:"Home",nav_airport:"Airport",nav_subway:"Subway",nav_taxi:"Taxi",nav_food:"Food",nav_photo:"Photo",nav_events:"Events",
+  nav_home:"Home",nav_airport:"Airport",nav_subway:"Subway",nav_taxi:"Taxi",nav_food:"Food",nav_photo:"Photo",nav_hot:"Hot Now",hot_badge:"HOT NOW · SEOUL 2026",hot_title:"Trending Photo Spots & Hot Places",hot_desc:"Classic icons plus neighborhoods that are especially popular right now. Every card includes the nearest station, recommended exit, best time and map.",nav_events:"Events",
   hero_badge:"SEOUL EXPLORER · V6",hero_title:"Know before<br>you go.",
   hero_lead:"Airport arrival, T-money, subway routes and exits, real exit-photo support where reusable images are available, taxi fare checks, lots of food choices, photo spots and official Seoul event links.",
   quick_airport:"✈️ Just Landed",quick_subway:"🚇 Subway Exit",quick_taxi:"🚕 Taxi Check",quick_food:"🍜 Food",quick_events:"🎉 Events",
@@ -189,7 +196,7 @@ const I18N = {
   outside_title:"Going outside Seoul?",open_map:"Open Map",show_more:"Show more",all_food:"All food types",all_photo:"All photo themes",price:"Price guide",best_time:"Best time"
  },
  ja:{
-  nav_home:"ホーム",nav_airport:"空港",nav_subway:"地下鉄",nav_taxi:"タクシー",nav_food:"グルメ",nav_photo:"写真スポット",nav_events:"イベント",
+  nav_home:"ホーム",nav_airport:"空港",nav_subway:"地下鉄",nav_taxi:"タクシー",nav_food:"グルメ",nav_photo:"写真スポット",nav_hot:"話題スポット",hot_badge:"今注目 · ソウル 2026",hot_title:"人気の写真スポット＆ホットプレイス",hot_desc:"定番名所と、今特に人気のエリアをまとめました。最寄り駅、出口、おすすめ時間、地図を確認できます。",nav_events:"イベント",
   hero_badge:"ソウル・エクスプローラー · V6",hero_title:"行く前に<br>知っておこう。",
   hero_lead:"空港到着、T-money、地下鉄ルートと出口、出口写真、タクシー料金確認、グルメ、写真スポット、ソウル公式イベント情報を一つにまとめました。",
   quick_airport:"✈️ 韓国到着",quick_subway:"🚇 地下鉄出口",quick_taxi:"🚕 タクシー料金",quick_food:"🍜 グルメ",quick_events:"🎉 イベント",
@@ -201,7 +208,7 @@ const I18N = {
   outside_title:"ソウル郊外へ行くなら",open_map:"地図を開く",show_more:"もっと見る",all_food:"すべての料理",all_photo:"すべてのテーマ",price:"価格帯",best_time:"おすすめ時間"
  },
  zh:{
-  nav_home:"首页",nav_airport:"机场",nav_subway:"地铁",nav_taxi:"出租车",nav_food:"美食",nav_photo:"拍照景点",nav_events:"活动",
+  nav_home:"首页",nav_airport:"机场",nav_subway:"地铁",nav_taxi:"出租车",nav_food:"美食",nav_photo:"拍照景点",nav_hot:"热门地点",hot_badge:"当前热门 · 首尔 2026",hot_title:"热门拍照景点与打卡地",hot_desc:"经典景点和当前特别受欢迎的街区。每张卡片都显示最近车站、推荐出口、最佳时间和地图。",nav_events:"活动",
   hero_badge:"首尔探索指南 · V6",hero_title:"出发之前<br>先了解。",
   hero_lead:"将机场抵达、T-money、地铁路线与出口、出口照片、出租车费用查询、美食、拍照景点和首尔官方活动信息整合在一个页面中。",
   quick_airport:"✈️ 刚到韩国",quick_subway:"🚇 地铁出口",quick_taxi:"🚕 出租车费用",quick_food:"🍜 美食",quick_events:"🎉 活动",
@@ -280,9 +287,23 @@ function setLang(l){
  document.querySelectorAll('.langbtn').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(tr(k))el.textContent=tr(k)});
  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(tr(k))el.innerHTML=tr(k)}); document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=tr(el.dataset.i18nPlaceholder));
- renderTabs(); renderRoute(); renderDistrictTabs(); renderNeighborhoodTabs(); renderCats(); renderFood(false); renderPhoto();
+ renderTabs(); renderRoute(); renderDistrictTabs(); renderNeighborhoodTabs(); renderCats(); renderFood(false); renderPhoto(); renderHotspots();
 }
 
-function renderAll(){renderTabs();renderRoute();renderDistrictTabs();renderNeighborhoodTabs();renderCats();renderFood(true);const pt=document.getElementById('photoTheme');if(pt)pt.value='All';renderPhoto();renderTaxiOptions()}
+
+const HOTSPOTS=[{"name": "Gyeongbokgung Palace", "local": "경복궁", "theme": "Palace / Hanbok", "station": "Gyeongbokgung Station", "exit": "Exit 5", "best": "Morning", "tip": "Classic Seoul palace shots; hanbok portraits work especially well.", "map": "https://www.google.com/maps/search/?api=1&query=Gyeongbokgung%20Palace%20Seoul"}, {"name": "Seongsu Yeonmujang-gil", "local": "성수 연무장길", "theme": "2026 Trend / Pop-ups", "station": "Seongsu Station", "exit": "Exit 3", "best": "Afternoon", "tip": "Creative storefronts, pop-ups, industrial architecture and street photography.", "map": "https://www.google.com/maps/search/?api=1&query=Seongsu%20Yeonmujang-gil%20Seoul"}, {"name": "Seoul Forest", "local": "서울숲", "theme": "Park / Portrait", "station": "Seoul Forest Station", "exit": "Exit 3", "best": "Morning / Golden hour", "tip": "Portraits, tree-lined paths and seasonal greenery.", "map": "https://www.google.com/maps/search/?api=1&query=Seoul%20Forest%20Seoul"}, {"name": "Hannam-dong", "local": "한남동", "theme": "Fashion / Street", "station": "Hangangjin Station", "exit": "Exit 3", "best": "Afternoon", "tip": "Upscale fashion, concept stores and clean urban streets.", "map": "https://www.google.com/maps/search/?api=1&query=Hannam-dong%20Seoul"}, {"name": "Euljiro", "local": "을지로", "theme": "Newtro / Night", "station": "Euljiro 3-ga Station", "exit": "Exit 3", "best": "Evening / Night", "tip": "Retro alleys, neon signs and industrial Seoul atmosphere.", "map": "https://www.google.com/maps/search/?api=1&query=Euljiro%20Seoul"}, {"name": "Mangwon Market & Mangwon-dong", "local": "망원시장·망원동", "theme": "Local / Market", "station": "Mangwon Station", "exit": "Exit 2", "best": "Afternoon", "tip": "Local market food, neighborhood streets and casual travel shots.", "map": "https://www.google.com/maps/search/?api=1&query=Mangwon%20Market%20%26%20Mangwon-dong%20Seoul"}, {"name": "Yeonnam-dong", "local": "연남동", "theme": "Cafe / Street", "station": "Hongik Univ. Station", "exit": "Exit 3", "best": "Afternoon", "tip": "Café streets, side alleys and Gyeongui Line Forest Park.", "map": "https://www.google.com/maps/search/?api=1&query=Yeonnam-dong%20Seoul"}, {"name": "Seochon", "local": "서촌", "theme": "Hanok / Local", "station": "Gyeongbokgung Station", "exit": "Exit 2", "best": "Morning / Afternoon", "tip": "Quiet hanok alleys, small cafés and traditional-meets-modern streets.", "map": "https://www.google.com/maps/search/?api=1&query=Seochon%20Seoul"}, {"name": "Apgujeong Rodeo Street", "local": "압구정로데오", "theme": "Fashion / K-style", "station": "Apgujeong Rodeo Station", "exit": "Exit 5", "best": "Afternoon / Evening", "tip": "Fashion stores, cafés and K-style street photography.", "map": "https://www.google.com/maps/search/?api=1&query=Apgujeong%20Rodeo%20Street%20Seoul"}, {"name": "Starfield Library COEX", "local": "별마당도서관", "theme": "Architecture", "station": "Samseong Station", "exit": "Exit 6", "best": "Daytime", "tip": "Vertical compositions with the giant book walls.", "map": "https://www.google.com/maps/search/?api=1&query=Starfield%20Library%20COEX%20Seoul"}, {"name": "The Hyundai Seoul", "local": "더현대서울", "theme": "Architecture / Pop-up", "station": "Yeouido Station", "exit": "Exit 3", "best": "Daytime", "tip": "Seasonal pop-ups, indoor architecture and modern Seoul lifestyle.", "map": "https://www.google.com/maps/search/?api=1&query=The%20Hyundai%20Seoul%20Seoul"}, {"name": "N Seoul Tower", "local": "남산서울타워", "theme": "Skyline / Night", "station": "Myeongdong Station", "exit": "Exit 3", "best": "Sunset / Night", "tip": "Seoul skyline and night views.", "map": "https://www.google.com/maps/search/?api=1&query=N%20Seoul%20Tower%20Seoul"}, {"name": "Lotte World Tower & Seoul Sky", "local": "롯데월드타워·서울스카이", "theme": "Skyline", "station": "Jamsil Station", "exit": "Exit 2", "best": "Sunset / Night", "tip": "Tower, skyline, Seoul Sky and reflections from Seokchon Lake.", "map": "https://www.google.com/maps/search/?api=1&query=Lotte%20World%20Tower%20%26%20Seoul%20Sky%20Seoul"}, {"name": "Ikseon-dong Hanok Street", "local": "익선동 한옥거리", "theme": "Hanok / Cafe", "station": "Jongno 3-ga Station", "exit": "Exit 4", "best": "Afternoon / Evening", "tip": "Compact hanok alleys, cafés and warm night lighting.", "map": "https://www.google.com/maps/search/?api=1&query=Ikseon-dong%20Hanok%20Street%20Seoul"}, {"name": "Bukchon Hanok Village", "local": "북촌한옥마을", "theme": "Hanok / Heritage", "station": "Anguk Station", "exit": "Exit 2", "best": "Morning", "tip": "Classic hanok street views; arrive early and respect residents.", "map": "https://www.google.com/maps/search/?api=1&query=Bukchon%20Hanok%20Village%20Seoul"}];
+function renderHotspots(){
+  const grid=document.getElementById('hotGrid');
+  if(!grid) return;
+  grid.innerHTML=HOTSPOTS.map(x=>`<article class="hotCard">
+    <span class="hotBadge">${x.theme}</span>
+    <h4>${x.name}</h4>
+    <div class="local">${x.local}</div>
+    <div class="facts">📸 ${tr('best_time')}: ${x.best}<br>🚇 ${x.station} · ${exitLabel(x.exit)}<br>💡 ${x.tip}</div>
+    <div class="btns"><a class="btn green" href="${x.map}" target="_blank">${tr('open_map')}</a></div>
+  </article>`).join('');
+}
+
+function renderAll(){renderTabs();renderRoute();renderDistrictTabs();renderNeighborhoodTabs();renderCats();renderFood(true);renderHotspots();const pt=document.getElementById('photoTheme');if(pt)pt.value='All';renderPhoto();renderTaxiOptions()}
 renderAll(); setLang(localStorage.getItem('koreaEasyLang')||'en');
 </script></body></html>
