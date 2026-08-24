@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,7 +11,7 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 .hero{padding:54px 0 26px}.eyebrow{display:inline-block;background:var(--soft);color:var(--g);padding:8px 12px;border-radius:999px;font-size:.75rem;font-weight:900;letter-spacing:.07em}h1{font-size:clamp(2.7rem,6vw,5.8rem);line-height:.96;letter-spacing:-.055em;margin:16px 0}.lead{max-width:820px;color:var(--muted);line-height:1.75;font-size:1.08rem}
 .quick{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:24px 0 42px}.quick a{background:white;border:1px solid var(--line);padding:16px;border-radius:17px;font-weight:900}
 .sec{margin:40px 0 56px}.sec h2{font-size:clamp(1.9rem,4vw,3rem);margin:0 0 7px}.sub{color:var(--muted);line-height:1.65;margin:0 0 20px}
-.dark{background:#132018;color:white;border-radius:28px;padding:25px}.dark .sub{color:#c8d6ce}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.step{background:white;color:#132018;border-radius:16px;padding:16px}.n{width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--g);font-weight:900;margin-bottom:8px}
+.dark{background:#132018;color:white;border-radius:28px;padding:25px}.dark .sub{color:#c8d6ce}.terminalBtns{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.terminalBtns button{border:0;background:#fff;color:#132018;padding:11px 15px;border-radius:12px;font-weight:900;cursor:pointer}.terminalBox{display:none;background:#1d3427;border:1px solid #365846;border-radius:18px;padding:18px;margin:10px 0 18px}.terminalBox.show{display:block}.terminalBox .facts{color:#dfe8e2}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.step{background:white;color:#132018;border-radius:16px;padding:16px}.n{width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--g);font-weight:900;margin-bottom:8px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}.tab{border:1px solid var(--line);background:white;padding:10px 13px;border-radius:999px;font-weight:800;cursor:pointer}.tab.on{background:#132018;color:white}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px}.card{background:white;border:1px solid var(--line);border-radius:21px;padding:20px}.card h3{margin:0 0 12px}.route{padding:10px 0;border-top:1px solid var(--line)}.route:first-child{border-top:0}.badge{display:inline-block;background:var(--soft);color:var(--g);padding:8px 11px;border-radius:999px;font-weight:900;font-size:.82rem}
 .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-block;border:0;padding:10px 12px;border-radius:11px;font-weight:900;font-size:.85rem;cursor:pointer}.green{background:var(--g);color:white}.soft{background:var(--soft);color:var(--g)}.yellow{background:var(--y);color:#132018}.red{background:#f8e9e7;color:var(--red)}
@@ -20,7 +20,7 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 .taxiBox{display:grid;grid-template-columns:1fr 1fr;gap:15px}.formRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;font-size:.78rem;font-weight:900;color:var(--muted);margin-bottom:6px}.field select,.field input{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:white}.result{background:#132018;color:white;border-radius:20px;padding:20px}.big{font-size:2rem;font-weight:950;margin:7px 0}.warn{background:#fff4d6;border:1px solid #f1d277;border-radius:16px;padding:15px;line-height:1.6;margin-top:12px}.official{font-size:.8rem;color:var(--muted);line-height:1.6}
 .events{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hotGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.hotCard{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.hotBadge{display:inline-block;background:#fff4d6;color:#8a5b00;padding:6px 9px;border-radius:999px;font-size:.72rem;font-weight:900}.hotCard h4{margin:9px 0 3px}.footer{padding:10px 0 70px;color:var(--muted);font-size:.82rem;line-height:1.6}
 @media(max-width:980px){.quick{grid-template-columns:repeat(3,1fr)}.foodGrid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.grid2,.taxiBox{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.foodGrid,.events,.hotGrid{grid-template-columns:repeat(2,1fr)}.links{display:none}}@media(max-width:520px){.quick,.steps,.foodGrid,.events,.hotGrid,.formRow{grid-template-columns:1fr}}
-</style></head>
+.airportMap{margin-top:16px;display:grid;gap:10px}.airportMap .mapTitle{font-weight:900;font-size:1rem}.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}.flowStep{flex:1 1 145px;background:#fff;color:#132018;border-radius:14px;padding:13px;border:1px solid #dce5df}.flowStep b{display:block;margin:4px 0}.flowArrow{align-self:center;font-weight:900;color:#f2c94c}.transportChoices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.transportChoices div{background:#132018;color:white;border-radius:12px;padding:10px;text-align:center;font-weight:800}.officialNote{font-size:.78rem;color:#dfe8e2;margin-top:10px}@media(max-width:600px){.flow{display:grid;grid-template-columns:1fr}.flowArrow{transform:rotate(90deg);justify-self:center}.transportChoices{grid-template-columns:1fr}}</style></head>
 <body>
 <header><nav class="wrap">
 <a class="brand" href="#home">KOREA <span>EASY</span></a>
@@ -64,9 +64,71 @@ header{position:sticky;top:0;z-index:99;background:#fffffff2;backdrop-filter:blu
 </div>
 </section>
 
-<section id="airport" class="sec dark"><span class="eyebrow">JUST LANDED?</span><h2 data-i18n="first30">First 30 minutes in Korea</h2><p class="sub" data-i18n="tmoney_desc">Buy or recharge T-money, get connected, then choose how you want to move.</p>
-<div class="steps"><div class="step"><div class="n">1</div><b data-i18n="won">Get Korean won</b><div class="facts" data-i18n="won_desc">Keep cash available for T-money purchase/top-up.</div></div><div class="step"><div class="n">2</div><b data-i18n="find_tmoney">Find T-money</b><div class="facts" data-i18n="find_tmoney_desc">Look for CU, GS25, 7-Eleven or subway recharge facilities.</div></div><div class="step"><div class="n">3</div><b data-i18n="tap">Tap correctly</b><div class="facts" data-i18n="tap_desc">Subway: enter + exit. Bus: board + get off.</div></div><div class="step"><div class="n">4</div><b data-i18n="choose_dest">Choose destination</b><div class="facts" data-i18n="choose_dest_desc">Use the subway or taxi tools below before leaving.</div></div></div>
-<div class="btns"><a class="btn yellow" href="https://www.airport.kr/ap_en/index.do" target="_blank" data-i18n="airport_guide">Incheon Airport Official Guide</a></div></section>
+<section id="airport" class="sec dark">
+<span class="eyebrow">JUST LANDED?</span>
+<h2 data-i18n="first30">First 30 minutes in Korea</h2>
+<p class="sub" data-i18n="tmoney_desc">Choose Terminal 1 or Terminal 2, then get T-money and start your trip.</p>
+
+<div class="terminalBtns">
+  <button onclick="showTerminal('t1')" data-i18n="terminal1">Terminal 1</button>
+  <button onclick="showTerminal('t2')" data-i18n="terminal2">Terminal 2</button>
+</div>
+
+<div id="t1" class="terminalBox">
+  <h3 data-i18n="terminal1">Terminal 1</h3>
+  <div class="facts" data-i18n="t1_desc">
+    After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.
+  </div>
+<div class="airportMap">
+ <div class="mapTitle" data-i18n="t1_map_title">T-money purchase guide</div>
+ <div class="flow">
+  <div class="flowStep"><span>✈️</span><b data-i18n="arrivals">ARRIVALS</b><small data-i18n="clear_arrival">Clear immigration and collect baggage</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small>CU · 1F public area near Arrival Hall B/E or Exits 5/11/13</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small>Currency exchange · 1F near Arrival Hall B</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>🚉</span><b data-i18n="choose_transport">CHOOSE TRANSPORT</b><small data-i18n="follow_signs">Follow airport signs</small></div>
+ </div>
+ <div class="transportChoices"><div>🚆 AREX → Seoul</div><div>🚌 Airport Bus</div><div>🚕 Taxi</div></div>
+ <div class="officialNote" data-i18n="schematic_note">Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.</div>
+</div>
+  <div class="btns">
+    <a class="btn yellow" target="_blank" href="https://www.airport.kr/ap_en/index.do" data-i18n="airport_guide">Incheon Airport Official Guide</a>
+  </div>
+</div>
+
+<div id="t2" class="terminalBox">
+  <h3 data-i18n="terminal2">Terminal 2</h3>
+  <div class="facts" data-i18n="t2_desc">
+    After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.
+  </div>
+<div class="airportMap">
+ <div class="mapTitle" data-i18n="t2_map_title">T-money purchase guide</div>
+ <div class="flow">
+  <div class="flowStep"><span>✈️</span><b data-i18n="arrivals">ARRIVALS</b><small data-i18n="clear_arrival">Clear immigration and collect baggage</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small>GS25 · 1F near Arrival Hall A / CU · 1F near Exit 10 or center</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small>ATM / currency exchange in public arrivals area</small></div>
+  <div class="flowArrow">→</div>
+  <div class="flowStep"><span>🚉</span><b data-i18n="choose_transport">CHOOSE TRANSPORT</b><small data-i18n="follow_signs">Follow airport signs</small></div>
+ </div>
+ <div class="transportChoices"><div>🚆 AREX → Seoul</div><div>🚌 Airport Bus</div><div>🚕 Taxi</div></div>
+ <div class="officialNote" data-i18n="schematic_note">Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.</div>
+</div>
+  <div class="btns">
+    <a class="btn yellow" target="_blank" href="https://www.airport.kr/ap_en/index.do" data-i18n="airport_guide">Incheon Airport Official Guide</a>
+  </div>
+</div>
+
+<div class="steps">
+  <div class="step"><div class="n">1</div><b data-i18n="won">Get Korean won</b><div class="facts" data-i18n="won_desc">Keep cash available for T-money purchase/top-up.</div></div>
+  <div class="step"><div class="n">2</div><b data-i18n="find_tmoney">Find T-money</b><div class="facts" data-i18n="find_tmoney_desc">Look for CU, GS25, 7-Eleven or subway recharge facilities.</div></div>
+  <div class="step"><div class="n">3</div><b data-i18n="tap">Tap correctly</b><div class="facts" data-i18n="tap_desc">Subway: enter + exit. Bus: board + get off.</div></div>
+  <div class="step"><div class="n">4</div><b data-i18n="choose_dest">Choose destination</b><div class="facts" data-i18n="choose_dest_desc">Use the subway or taxi tools below before leaving.</div></div>
+</div>
+</section>
 
 <section id="transport" class="sec"><h2 data-i18n="subway_title">Subway Route + Exit Guide</h2><p class="sub" data-i18n="subway_desc">Pick your destination. Where a reusable exit photo has been verified, it appears directly in the route. Otherwise use the map/exit-view button.</p>
 <div id="tabs" class="tabs"></div><div class="grid2">
@@ -135,6 +197,10 @@ const areas={"Myeongdong": {"lat": 37.5609, "lon": 126.986, "station": "Myeongdo
 let current='Myeongdong', currentDistrict='Jung-gu', foodLimit=12;
 
 function hav(a,b){const R=6371,rad=x=>x*Math.PI/180,dlat=rad(b.lat-a.lat),dlon=rad(b.lon-a.lon);const q=Math.sin(dlat/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dlon/2)**2;return 2*R*Math.asin(Math.sqrt(q))}
+function showTerminal(id){
+ document.querySelectorAll('.terminalBox').forEach(x=>x.classList.remove('show'));
+ const el=document.getElementById(id); if(el) el.classList.add('show');
+}
 function renderTabs(){document.getElementById('tabs').innerHTML=Object.keys(areas).map(a=>`<button class="tab ${a===current?'on':''}" onclick="current='${a}';foodLimit=12;renderAll()">${placeLabel(a)}</button>`).join('')}
 function renderRoute(){const x=areas[current];document.getElementById('routeTitle').textContent=tr('route_from')+placeLabel(current);document.getElementById('routeList').innerHTML=routes[current].map((v,i)=>`<div class="route"><b>${i+1}.</b> ${v}</div>`).join('');document.getElementById('stationMap').href=x.map;document.getElementById('streetBtn').href=x.street;document.getElementById('exitText').innerHTML=`<b>${x.station}</b><br><span class="badge">${x.line}</span><br><br>${tr('recommended')}: <b>${exitLabel(x.exit)}</b><br>${tr('landmark')}: ${x.landmark}`;
  const w=document.getElementById('exitImageWrap'),p=exitPhotos[current]; if(p){w.innerHTML=`<a href="${p.source}" target="_blank"><img class="exitPhoto" src="${p.img}" alt="${current} subway exit photo"></a><div class="credit">Exit photo: ${p.credit}. ${p.license}. Tap the image for source/license details.</div>`} else {w.innerHTML=`<div class="warn">A reusable exit photo has not yet been verified for this location. Use <b data-i18n="street_view">Exit / Street View</b> above so we do not publish an unlicensed image.</div>`}}
@@ -226,8 +292,8 @@ const CAT_JA={"Korean":"韓国料理","Korean BBQ":"韓国焼肉","Halal BBQ":"�
 const CAT_ZH={"Korean":"韩国料理","Korean BBQ":"韩式烤肉","Halal BBQ":"清真烤肉","Noodles":"面食","Cafe":"咖啡馆","Dessert":"甜点","Chicken":"炸鸡","Fine Dining":"高级餐饮","Street Food":"街头美食","Indian":"印度料理","Chinese":"中餐","Japanese":"日本料理","Seafood":"海鲜","Vegan":"纯素","Vegetarian":"素食"};
 
 
-Object.assign(I18N.en,{nav_home:"Home",quick_photo:"📸 Photo Spots",why_title:"Everything you need after landing",why_desc:"KOREA EASY connects the steps travelers usually search separately — arrival, transport, food, photo spots and events — into one simple flow.",why_airport:"Airport & T-money",why_airport_desc:"Find what to do first when you arrive.",why_transport:"Routes & Exits",why_transport_desc:"See which line, transfer and exit to use.",why_explore:"Explore Seoul",why_explore_desc:"Food, photo spots and events by area.",
- first30:"First 30 minutes in Korea",tmoney_desc:"Buy or recharge T-money, get connected, then choose how you want to move.",
+Object.assign(I18N.en,{arrivals:"ARRIVALS",clear_arrival:"Clear immigration and collect baggage",buy_tmoney:"BUY T-MONEY",cash_topup:"CASH / TOP UP",choose_transport:"CHOOSE TRANSPORT",follow_signs:"Follow airport signs",t1_map_title:"Terminal 1 · T-money purchase guide",t2_map_title:"Terminal 2 · T-money purchase guide",schematic_note:"Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.",nav_home:"Home",quick_photo:"📸 Photo Spots",why_title:"Everything you need after landing",why_desc:"KOREA EASY connects the steps travelers usually search separately — arrival, transport, food, photo spots and events — into one simple flow.",why_airport:"Airport & T-money",why_airport_desc:"Find what to do first when you arrive.",why_transport:"Routes & Exits",why_transport_desc:"See which line, transfer and exit to use.",why_explore:"Explore Seoul",why_explore_desc:"Food, photo spots and events by area.",
+ terminal1:"Terminal 1",terminal2:"Terminal 2",t1_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",t2_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",first30:"First 30 minutes in Korea",tmoney_desc:"Buy or recharge T-money, get connected, then choose how you want to move.",
  won:"Get Korean won",won_desc:"Keep cash available for T-money purchase/top-up.",find_tmoney:"Find T-money",find_tmoney_desc:"Look for CU, GS25, 7-Eleven or subway recharge facilities.",
  tap:"Tap correctly",tap_desc:"Subway: tap when entering and leaving. Bus: tap when boarding and getting off.",choose_dest:"Choose destination",choose_dest_desc:"Use the subway or taxi tools below before leaving.",
  airport_guide:"Incheon Airport Official Guide",station_map:"Station Map",street_view:"Exit / Street View",from:"FROM",to:"TO",time:"TIME",ride_type:"RIDE TYPE",
@@ -242,8 +308,8 @@ Object.assign(I18N.en,{nav_home:"Home",quick_photo:"📸 Photo Spots",why_title:
  official_meter:"Official sedan-taxi meter reference: ₩4,800 up to 1.6 km; then ₩100/131 m and timed fare when moving slowly. Late-night surcharge: +20% (22:00–23:00), +40% (23:00–02:00), +20% (02:00–04:00). International Taxi Incheon Airport ↔ Seoul section fares vary by zone.",
  independent:"KOREA EASY is an independent visitor guide. Routes, station exits, restaurant branches, prices and event schedules can change. Always confirm current information through the linked official or map source before travel."
 });
-Object.assign(I18N.ja,{nav_home:"ホーム",quick_photo:"📸 写真スポット",why_title:"到着後に必要な情報をひとつに",why_desc:"KOREA EASYは、空港到着、交通、グルメ、写真スポット、イベントなど別々に探しがちな情報を一つの流れで案内します。",why_airport:"空港 & T-money",why_airport_desc:"韓国到着後に最初にすることを案内します。",why_transport:"ルート & 出口",why_transport_desc:"路線、乗換、出口を分かりやすく確認できます。",why_explore:"ソウル観光",why_explore_desc:"地域別のグルメ、写真スポット、イベントを探せます。",
- first30:"韓国到着後の最初の30分",tmoney_desc:"T-moneyを購入・チャージして通信環境を整えたら、移動方法を選びましょう。",
+Object.assign(I18N.ja,{arrivals:"到着",clear_arrival:"入国審査と手荷物受取を済ませる",buy_tmoney:"T-moneyを購入",cash_topup:"現金 / チャージ",choose_transport:"交通手段を選択",follow_signs:"空港内の案内表示に従う",t1_map_title:"第1ターミナル · T-money購入案内",t2_map_title:"第2ターミナル · T-money購入案内",schematic_note:"これは簡易案内図で、正式な館内図ではありません。店舗や場所は変更される場合があるため、空港公式施設案内も確認してください。",nav_home:"ホーム",quick_photo:"📸 写真スポット",why_title:"到着後に必要な情報をひとつに",why_desc:"KOREA EASYは、空港到着、交通、グルメ、写真スポット、イベントなど別々に探しがちな情報を一つの流れで案内します。",why_airport:"空港 & T-money",why_airport_desc:"韓国到着後に最初にすることを案内します。",why_transport:"ルート & 出口",why_transport_desc:"路線、乗換、出口を分かりやすく確認できます。",why_explore:"ソウル観光",why_explore_desc:"地域別のグルメ、写真スポット、イベントを探せます。",
+ terminal1:"第1ターミナル",terminal2:"第2ターミナル",t1_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",t2_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",first30:"韓国到着後の最初の30分",tmoney_desc:"T-moneyを購入・チャージして通信環境を整えたら、移動方法を選びましょう。",
  won:"韓国ウォンを用意",won_desc:"T-moneyの購入・チャージ用に現金を用意しておくと便利です。",find_tmoney:"T-moneyを購入",find_tmoney_desc:"CU、GS25、セブンイレブン、または地下鉄のチャージ設備を探してください。",
  tap:"正しくタッチ",tap_desc:"地下鉄は乗車時と降車時、バスは乗車時と下車時にタッチします。",choose_dest:"目的地を選択",choose_dest_desc:"出発前に下の地下鉄・タクシーツールを確認してください。",
  airport_guide:"仁川空港 公式ガイド",station_map:"駅の地図",street_view:"出口・ストリートビュー",from:"出発地",to:"目的地",time:"時間帯",ride_type:"タクシー種類",
@@ -258,8 +324,8 @@ Object.assign(I18N.ja,{nav_home:"ホーム",quick_photo:"📸 写真スポット
  official_meter:"一般中型タクシーの公式料金目安：最初の1.6kmは4,800ウォン。その後は131mごとに100ウォン、低速時は時間料金が加算されます。深夜割増は22～23時20%、23～02時40%、02～04時20%。仁川空港↔ソウルの国際タクシーはゾーン別料金です。",
  independent:"KOREA EASYは独立した旅行案内サイトです。ルート、駅出口、店舗、料金、イベント日程は変更される場合があります。旅行前に公式サイトまたは地図リンクで最新情報をご確認ください。"
 });
-Object.assign(I18N.zh,{nav_home:"首页",quick_photo:"📸 拍照景点",why_title:"抵达韩国后需要的信息，一站查看",why_desc:"KOREA EASY把机场抵达、交通、美食、拍照景点和活动等通常需要分别搜索的信息整合成一个简单流程。",why_airport:"机场 & T-money",why_airport_desc:"告诉你抵达韩国后第一步该做什么。",why_transport:"路线 & 出口",why_transport_desc:"清楚查看线路、换乘和推荐出口。",why_explore:"探索首尔",why_explore_desc:"按地区查找美食、拍照景点和活动。",
- first30:"抵达韩国后的前30分钟",tmoney_desc:"购买或充值T-money、连接网络，然后选择前往目的地的交通方式。",
+Object.assign(I18N.zh,{arrivals:"到达大厅",clear_arrival:"完成入境检查并领取行李",buy_tmoney:"购买 T-money",cash_topup:"现金 / 充值",choose_transport:"选择交通方式",follow_signs:"按照机场指示牌前往",t1_map_title:"1号航站楼 · T-money购买指南",t2_map_title:"2号航站楼 · T-money购买指南",schematic_note:"这是简易导向图，并非正式楼层图。商店和位置可能调整，请同时查看机场官方设施指南。",nav_home:"首页",quick_photo:"📸 拍照景点",why_title:"抵达韩国后需要的信息，一站查看",why_desc:"KOREA EASY把机场抵达、交通、美食、拍照景点和活动等通常需要分别搜索的信息整合成一个简单流程。",why_airport:"机场 & T-money",why_airport_desc:"告诉你抵达韩国后第一步该做什么。",why_transport:"路线 & 出口",why_transport_desc:"清楚查看线路、换乘和推荐出口。",why_explore:"探索首尔",why_explore_desc:"按地区查找美食、拍照景点和活动。",
+ terminal1:"1号航站楼",terminal2:"2号航站楼",t1_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",t2_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",first30:"抵达韩国后的前30分钟",tmoney_desc:"购买或充值T-money、连接网络，然后选择前往目的地的交通方式。",
  won:"准备韩元现金",won_desc:"建议准备一些现金用于购买和充值T-money。",find_tmoney:"购买T-money",find_tmoney_desc:"可寻找CU、GS25、7-Eleven便利店或地铁充值设备。",
  tap:"正确刷卡",tap_desc:"乘坐地铁时进站和出站都要刷卡；乘坐公交时上车和下车都要刷卡。",choose_dest:"选择目的地",choose_dest_desc:"出发前可使用下方的地铁和出租车工具。",
  airport_guide:"仁川机场官方指南",station_map:"车站地图",street_view:"出口 / 街景",from:"出发地",to:"目的地",time:"时间",ride_type:"出租车类型",
@@ -305,5 +371,5 @@ function renderHotspots(){
 }
 
 function renderAll(){renderTabs();renderRoute();renderDistrictTabs();renderNeighborhoodTabs();renderCats();renderFood(true);renderHotspots();const pt=document.getElementById('photoTheme');if(pt)pt.value='All';renderPhoto();renderTaxiOptions()}
-renderAll(); setLang(localStorage.getItem('koreaEasyLang')||'en');
+renderAll(); showTerminal('t1'); setLang(localStorage.getItem('koreaEasyLang')||'en');
 </script></body></html>
