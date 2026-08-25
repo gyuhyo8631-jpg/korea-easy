@@ -78,7 +78,7 @@ header{position:sticky;top:0;z-index:99;background:#fbf8f0ed;backdrop-filter:blu
 </section>
 
 <section id="airport" class="sec dark">
-<span class="eyebrow">JUST LANDED?</span>
+<span class="eyebrow" data-i18n="airport_eyebrow">JUST LANDED?</span>
 <h2 data-i18n="first30">First 30 minutes in Korea</h2>
 <p class="sub" data-i18n="tmoney_desc">Choose Terminal 1 or Terminal 2, then get T-money and start your trip.</p>
 
@@ -88,7 +88,7 @@ header{position:sticky;top:0;z-index:99;background:#fbf8f0ed;backdrop-filter:blu
 </div>
 
 <div class="btns" style="margin:0 0 14px">
-  <a class="btn yellow" href="incheon-airport-to-seoul.html">🧭 T1/T2 Taxi, Bus &amp; AREX Guide</a>
+  <a class="btn yellow" href="incheon-airport-to-seoul.html" data-i18n="airport_transport_guide">🧭 T1/T2 Taxi, Bus &amp; AREX Guide</a>
 </div>
 
 <div id="t1" class="terminalBox">
@@ -101,13 +101,13 @@ header{position:sticky;top:0;z-index:99;background:#fbf8f0ed;backdrop-filter:blu
  <div class="flow">
   <div class="flowStep"><span>✈️</span><b data-i18n="arrivals">ARRIVALS</b><small data-i18n="clear_arrival">Clear immigration and collect baggage</small></div>
   <div class="flowArrow">→</div>
-  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small>CU · 1F public area near Arrival Hall B/E or Exits 5/11/13</small></div>
+  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small data-i18n="t1_buy_location">CU · 1F public area near Arrival Hall B/E or Exits 5/11/13</small></div>
   <div class="flowArrow">→</div>
-  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small>Currency exchange · 1F near Arrival Hall B</small></div>
+  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small data-i18n="t1_cash_location">Currency exchange · 1F near Arrival Hall B</small></div>
   <div class="flowArrow">→</div>
   <div class="flowStep"><span>🚉</span><b data-i18n="choose_transport">CHOOSE TRANSPORT</b><small data-i18n="follow_signs">Follow airport signs</small></div>
  </div>
- <div class="transportChoices"><div>🚆 AREX → Seoul</div><div>🚌 Airport Bus</div><div>🚕 Taxi</div></div>
+ <div class="transportChoices"><div data-i18n="arex_to_seoul">🚆 AREX → Seoul</div><div data-i18n="airport_bus">🚌 Airport Bus</div><div data-i18n="airport_taxi">🚕 Taxi</div></div>
  <div class="officialNote" data-i18n="schematic_note">Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.</div>
 </div>
   <div class="btns">
@@ -125,13 +125,13 @@ header{position:sticky;top:0;z-index:99;background:#fbf8f0ed;backdrop-filter:blu
  <div class="flow">
   <div class="flowStep"><span>✈️</span><b data-i18n="arrivals">ARRIVALS</b><small data-i18n="clear_arrival">Clear immigration and collect baggage</small></div>
   <div class="flowArrow">→</div>
-  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small>GS25 · 1F near Arrival Hall A / CU · 1F near Exit 10 or center</small></div>
+  <div class="flowStep"><span>🏪</span><b data-i18n="buy_tmoney">BUY T-MONEY</b><small data-i18n="t2_buy_location">GS25 · 1F near Arrival Hall A / CU · 1F near Exit 10 or center</small></div>
   <div class="flowArrow">→</div>
-  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small>ATM / currency exchange in public arrivals area</small></div>
+  <div class="flowStep"><span>💴</span><b data-i18n="cash_topup">CASH / TOP UP</b><small data-i18n="t2_cash_location">ATM / currency exchange in public arrivals area</small></div>
   <div class="flowArrow">→</div>
   <div class="flowStep"><span>🚉</span><b data-i18n="choose_transport">CHOOSE TRANSPORT</b><small data-i18n="follow_signs">Follow airport signs</small></div>
  </div>
- <div class="transportChoices"><div>🚆 AREX → Seoul</div><div>🚌 Airport Bus</div><div>🚕 Taxi</div></div>
+ <div class="transportChoices"><div data-i18n="arex_to_seoul">🚆 AREX → Seoul</div><div data-i18n="airport_bus">🚌 Airport Bus</div><div data-i18n="airport_taxi">🚕 Taxi</div></div>
  <div class="officialNote" data-i18n="schematic_note">Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.</div>
 </div>
   <div class="btns">
@@ -375,7 +375,7 @@ const CAT_ZH={"Korean":"韩国料理","Korean BBQ":"韩式烤肉","Halal BBQ":"�
 
 
 Object.assign(I18N.en,{arrivals:"ARRIVALS",clear_arrival:"Clear immigration and collect baggage",buy_tmoney:"BUY T-MONEY",cash_topup:"CASH / TOP UP",choose_transport:"CHOOSE TRANSPORT",follow_signs:"Follow airport signs",t1_map_title:"Terminal 1 · T-money purchase guide",t2_map_title:"Terminal 2 · T-money purchase guide",schematic_note:"Simple orientation guide — not a floor plan. Airport shops and locations can change; confirm with the official airport facility guide.",nav_home:"Home",quick_photo:"📸 Photo Spots",why_title:"Everything you need after landing",why_desc:"KOREA EASY connects the steps travelers usually search separately — arrival, transport, food, photo spots and events — into one simple flow.",why_airport:"Airport & T-money",why_airport_desc:"Find what to do first when you arrive.",why_transport:"Routes & Exits",why_transport_desc:"See which line, transfer and exit to use.",why_explore:"Explore Seoul",why_explore_desc:"Food, photo spots and events by area.",
- terminal1:"Terminal 1",terminal2:"Terminal 2",t1_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",t2_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",first30:"First 30 minutes in Korea",tmoney_desc:"Buy or recharge T-money, get connected, then choose how you want to move.",
+ terminal1:"Terminal 1",terminal2:"Terminal 2",t1_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",t2_desc:"After arrival, look for CU / GS25 / 7-Eleven in the public arrivals area. Ask for a T-money card, add cash, then follow signs for AREX, airport bus or taxi.",first30:"First 30 minutes in Korea",tmoney_desc:"Buy or recharge T-money, get connected, then choose how you want to move.",airport_eyebrow:"JUST LANDED?",airport_transport_guide:"🧭 T1/T2 Taxi, Bus & AREX Guide",t1_buy_location:"CU · 1F public area near Arrival Hall B/E or Exits 5/11/13",t1_cash_location:"Currency exchange · 1F near Arrival Hall B",t2_buy_location:"GS25 · 1F near Arrival Hall A / CU · 1F near Exit 10 or center",t2_cash_location:"ATM / currency exchange in public arrivals area",arex_to_seoul:"🚆 AREX → Seoul",airport_bus:"🚌 Airport Bus",airport_taxi:"🚕 Taxi",
  won:"Get Korean won",won_desc:"Keep cash available for T-money purchase/top-up.",find_tmoney:"Find T-money",find_tmoney_desc:"Look for CU, GS25, 7-Eleven or subway recharge facilities.",
  tap:"Tap correctly",tap_desc:"Subway: tap when entering and leaving. Bus: tap when boarding and getting off.",choose_dest:"Choose destination",choose_dest_desc:"Use the subway or taxi tools below before leaving.",
  airport_guide:"Incheon Airport Official Guide",station_map:"Station Map",street_view:"Exit / Street View",from:"FROM",to:"TO",time:"TIME",ride_type:"RIDE TYPE",
@@ -391,7 +391,7 @@ Object.assign(I18N.en,{arrivals:"ARRIVALS",clear_arrival:"Clear immigration and 
  independent:"KOREA EASY is an independent visitor guide. Routes, station exits, restaurant branches, prices and event schedules can change. Always confirm current information through the linked official or map source before travel."
 });
 Object.assign(I18N.ja,{arrivals:"到着",clear_arrival:"入国審査と手荷物受取を済ませる",buy_tmoney:"T-moneyを購入",cash_topup:"現金 / チャージ",choose_transport:"交通手段を選択",follow_signs:"空港内の案内表示に従う",t1_map_title:"第1ターミナル · T-money購入案内",t2_map_title:"第2ターミナル · T-money購入案内",schematic_note:"これは簡易案内図で、正式な館内図ではありません。店舗や場所は変更される場合があるため、空港公式施設案内も確認してください。",nav_home:"ホーム",quick_photo:"📸 写真スポット",why_title:"到着後に必要な情報をひとつに",why_desc:"KOREA EASYは、空港到着、交通、グルメ、写真スポット、イベントなど別々に探しがちな情報を一つの流れで案内します。",why_airport:"空港 & T-money",why_airport_desc:"韓国到着後に最初にすることを案内します。",why_transport:"ルート & 出口",why_transport_desc:"路線、乗換、出口を分かりやすく確認できます。",why_explore:"ソウル観光",why_explore_desc:"地域別のグルメ、写真スポット、イベントを探せます。",
- terminal1:"第1ターミナル",terminal2:"第2ターミナル",t1_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",t2_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",first30:"韓国到着後の最初の30分",tmoney_desc:"T-moneyを購入・チャージして通信環境を整えたら、移動方法を選びましょう。",
+ terminal1:"第1ターミナル",terminal2:"第2ターミナル",t1_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",t2_desc:"到着後、一般到着エリアのCU・GS25・セブンイレブンなどを探してください。T-moneyカードを購入して現金でチャージし、その後AREX・空港バス・タクシーの案内表示に従って移動します。",first30:"韓国到着後の最初の30分",tmoney_desc:"T-moneyを購入・チャージして通信環境を整えたら、移動方法を選びましょう。",airport_eyebrow:"到着したばかりですか？",airport_transport_guide:"🧭 T1/T2 タクシー・空港バス・AREX案内",t1_buy_location:"CU · 1階一般エリア（到着ロビーB/E付近・出口5/11/13付近）",t1_cash_location:"両替所 · 1階 到着ロビーB付近",t2_buy_location:"GS25 · 1階 到着ロビーA付近 / CU · 1階 出口10または中央付近",t2_cash_location:"ATM・両替所 · 一般到着エリア",arex_to_seoul:"🚆 AREX → ソウル",airport_bus:"🚌 空港バス",airport_taxi:"🚕 タクシー",
  won:"韓国ウォンを用意",won_desc:"T-moneyの購入・チャージ用に現金を用意しておくと便利です。",find_tmoney:"T-moneyを購入",find_tmoney_desc:"CU、GS25、セブンイレブン、または地下鉄のチャージ設備を探してください。",
  tap:"正しくタッチ",tap_desc:"地下鉄は乗車時と降車時、バスは乗車時と下車時にタッチします。",choose_dest:"目的地を選択",choose_dest_desc:"出発前に下の地下鉄・タクシーツールを確認してください。",
  airport_guide:"仁川空港 公式ガイド",station_map:"駅の地図",street_view:"出口・ストリートビュー",from:"出発地",to:"目的地",time:"時間帯",ride_type:"タクシー種類",
@@ -407,7 +407,7 @@ Object.assign(I18N.ja,{arrivals:"到着",clear_arrival:"入国審査と手荷物
  independent:"KOREA EASYは独立した旅行案内サイトです。ルート、駅出口、店舗、料金、イベント日程は変更される場合があります。旅行前に公式サイトまたは地図リンクで最新情報をご確認ください。"
 });
 Object.assign(I18N.zh,{arrivals:"到达大厅",clear_arrival:"完成入境检查并领取行李",buy_tmoney:"购买 T-money",cash_topup:"现金 / 充值",choose_transport:"选择交通方式",follow_signs:"按照机场指示牌前往",t1_map_title:"1号航站楼 · T-money购买指南",t2_map_title:"2号航站楼 · T-money购买指南",schematic_note:"这是简易导向图，并非正式楼层图。商店和位置可能调整，请同时查看机场官方设施指南。",nav_home:"首页",quick_photo:"📸 拍照景点",why_title:"抵达韩国后需要的信息，一站查看",why_desc:"KOREA EASY把机场抵达、交通、美食、拍照景点和活动等通常需要分别搜索的信息整合成一个简单流程。",why_airport:"机场 & T-money",why_airport_desc:"告诉你抵达韩国后第一步该做什么。",why_transport:"路线 & 出口",why_transport_desc:"清楚查看线路、换乘和推荐出口。",why_explore:"探索首尔",why_explore_desc:"按地区查找美食、拍照景点和活动。",
- terminal1:"1号航站楼",terminal2:"2号航站楼",t1_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",t2_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",first30:"抵达韩国后的前30分钟",tmoney_desc:"购买或充值T-money、连接网络，然后选择前往目的地的交通方式。",
+ terminal1:"1号航站楼",terminal2:"2号航站楼",t1_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",t2_desc:"抵达后，可在公共到达区域寻找CU、GS25、7-Eleven等便利店。购买T-money卡并用现金充值，然后按照AREX、机场巴士或出租车指示前往目的地。",first30:"抵达韩国后的前30分钟",tmoney_desc:"购买或充值T-money、连接网络，然后选择前往目的地的交通方式。",airport_eyebrow:"刚抵达韩国？",airport_transport_guide:"🧭 T1/T2 出租车、机场巴士与 AREX 指南",t1_buy_location:"CU · 1层公共区域（到达大厅B/E或出口5/11/13附近）",t1_cash_location:"货币兑换 · 1层到达大厅B附近",t2_buy_location:"GS25 · 1层到达大厅A附近 / CU · 1层出口10或中央附近",t2_cash_location:"ATM / 货币兑换 · 公共到达区域",arex_to_seoul:"🚆 AREX → 首尔",airport_bus:"🚌 机场巴士",airport_taxi:"🚕 出租车",
  won:"准备韩元现金",won_desc:"建议准备一些现金用于购买和充值T-money。",find_tmoney:"购买T-money",find_tmoney_desc:"可寻找CU、GS25、7-Eleven便利店或地铁充值设备。",
  tap:"正确刷卡",tap_desc:"乘坐地铁时进站和出站都要刷卡；乘坐公交时上车和下车都要刷卡。",choose_dest:"选择目的地",choose_dest_desc:"出发前可使用下方的地铁和出租车工具。",
  airport_guide:"仁川机场官方指南",station_map:"车站地图",street_view:"出口 / 街景",from:"出发地",to:"目的地",time:"时间",ride_type:"出租车类型",
