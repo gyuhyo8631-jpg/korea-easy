@@ -46,7 +46,7 @@
 <a href="#photo" data-i18n="nav_photo">Photo</a><a href="#hot-now" data-i18n="nav_hot">Hot Now</a>
 <a href="#events" data-i18n="nav_events">Events</a>
 </div>
-<div class="navActions"><a class="topTmoney" href="tmoney-guide-foreigners.html" data-transport-label="tmoney">💳 T-money Guide</a><a class="topShortcut" href="#subway" data-transport-label="subway">🚇 Subway</a><a class="topShortcut" href="incheon-airport-to-seoul.html#rental-car" data-transport-label="rental">🚗 Rental car</a><div class="langswitch">
+<div class="navActions"><a class="topTmoney" href="#airport" onclick="openTmoneyGuide(event)" data-transport-label="tmoney">💳 T-money Guide</a><a class="topShortcut" href="#transport" data-transport-label="subway">🚇 Subway</a><a class="topShortcut" href="incheon-airport-to-seoul.html#rental-car" data-transport-label="rental">🚗 Rental car</a><div class="langswitch">
 <button class="langbtn on" data-lang="en" onclick="setLang('en')">EN</button>
 <button class="langbtn" data-lang="ja" onclick="setLang('ja')">日本語</button>
 <button class="langbtn" data-lang="zh" onclick="setLang('zh')">中文</button>
@@ -255,6 +255,14 @@ function hav(a,b){const R=6371,rad=x=>x*Math.PI/180,dlat=rad(b.lat-a.lat),dlon=r
 function showTerminal(id){
  document.querySelectorAll('.terminalBox').forEach(x=>x.classList.remove('show'));
  const el=document.getElementById(id); if(el) el.classList.add('show');
+}
+function openTmoneyGuide(event){
+ event.preventDefault();
+ showTerminal('t1');
+ const airport=document.getElementById('airport');
+ const purchase=document.querySelector('#t1 .airportMap');
+ airport?.scrollIntoView({behavior:'smooth',block:'start'});
+ window.setTimeout(()=>purchase?.scrollIntoView({behavior:'smooth',block:'center'}),420);
 }
 function renderTabs(){document.getElementById('tabs').innerHTML=Object.keys(areas).map(a=>`<button class="tab ${a===current?'on':''}" onclick="current='${a}';foodLimit=12;renderAll()">${placeLabel(a)}</button>`).join('')}
 function renderRoute(){const x=areas[current];document.getElementById('routeTitle').textContent=tr('route_from')+placeLabel(current);document.getElementById('routeList').innerHTML=routes[current].map((v,i)=>`<div class="route"><b>${i+1}.</b> ${v}</div>`).join('');document.getElementById('stationMap').href=x.map;document.getElementById('streetBtn').href=x.street;document.getElementById('exitText').innerHTML=`<b>${x.station}</b><br><span class="badge">${x.line}</span><br><br>${tr('recommended')}: <b>${exitLabel(x.exit)}</b><br>${tr('landmark')}: ${x.landmark}`;
