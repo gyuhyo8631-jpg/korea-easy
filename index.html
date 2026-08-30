@@ -53,12 +53,12 @@
 <a href="#photo" data-i18n="nav_photo">Photo</a><a href="#hot-now" data-i18n="nav_hot">Hot Now</a>
 <a href="#events" data-i18n="nav_events">Events</a>
 </div>
-<div class="navActions"><a class="topTmoney" href="tmoney-guide-foreigners.html" data-transport-label="tmoney">💳 T-money Guide</a><a class="topShortcut" href="#transport" data-transport-label="subway">🚇 Subway</a><a class="topShortcut" href="incheon-airport-to-seoul.html#rental-car" data-transport-label="rental">🚗 Rental car</a><div class="langswitch">
+<div class="navActions"><div class="langswitch">
 <button class="langbtn on" data-lang="en" onclick="setLang('en')">EN</button>
 <button class="langbtn" data-lang="ja" onclick="setLang('ja')">日本語</button>
 <button class="langbtn" data-lang="zh" onclick="setLang('zh')">中文</button>
 </div></div>
-</nav><div class="wrap mainShortcuts"><a class="tmoney" href="tmoney-guide-foreigners.html">💳 T-money</a><a class="subway" href="#transport">🚇 Subway</a></div></header>
+</nav><div class="wrap mainShortcuts"><a class="tmoney" href="tmoney-guide-foreigners.html">💳 T-money</a><a class="subway" href="#transport">🚇 Subway</a><a href="incheon-airport-to-seoul.html#rental-car">🚗 Rental Car</a><a href="https://www.google.com/travel/hotels/Korea" target="_blank" rel="noopener">🏨 Hotel</a><a href="https://www.wowpass.io/" target="_blank" rel="noopener">💳 WOWPASS</a><a href="https://www.airport.co.kr/gimpoeng/index.do" target="_blank" rel="noopener">✈️ Gimpo Airport</a></div></header>
 <main class="wrap">
 <section id="home" class="hero">
 <span class="eyebrow" data-i18n="hero_badge">KOREA EASY · TRAVEL HUB</span>
@@ -504,6 +504,7 @@ function renderHotspots(){
 }
 
 function renderAll(){renderTabs();renderRoute();renderDistrictTabs();renderNeighborhoodTabs();renderCats();renderFood(true);renderHotspots();const pt=document.getElementById('photoTheme');if(pt)pt.value='All';renderPhoto();renderTaxiOptions()}
+document.querySelector('.mainShortcuts').style.flexWrap='wrap';
 renderAll(); showTerminal('t1'); setLang(localStorage.getItem('koreaEasyLang')||'en');
 </script></body></html>
 KOREA-EASY-통합본.html
