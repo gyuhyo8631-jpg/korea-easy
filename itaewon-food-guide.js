@@ -23,3 +23,16 @@ function renderItaewonFood(){
  document.getElementById('itaewonFoodGrid').innerHTML=list.map(x=>`<article class="mini"><span class="itaewonBadge ${x.kind==='vegan'?'vegan':''}">${x.kind==='certified'?c.certified:x.kind==='vegan'?c.vegan:c.muslim}</span><h4>${x.name}</h4><div class="local">${x.local}</div><div class="facts">${x.cuisine[typeof lang==='undefined'?'en':lang]||x.cuisine.en}<br>🚇 ${x.station}<br>💬 ${x.note[typeof lang==='undefined'?'en':lang]||x.note.en}</div><div class="btns"><a class="btn officialPhotoBtn" target="_blank" rel="noopener noreferrer" href="${x.official}">${c.official}</a>${guideButton({name:x.name,local:x.local,map:x.map})}</div><div class="itaewonSource">✓ ${c.source} · ${c.verify}</div></article>`).join('');
 }
 function setItaewonFilter(filter){itaewonFilter=filter;renderItaewonFood()}
+
+// KOREA EASY arrival & stay shortcuts
+(function(){
+ const labels={en:{hotel:'🏨 Hotel',wow:'💳 WOWPASS',gimpo:'✈️ Gimpo Airport'},ja:{hotel:'🏨 ホテル',wow:'💳 WOWPASS',gimpo:'✈️ 金浦空港'},zh:{hotel:'🏨 酒店',wow:'💳 WOWPASS',gimpo:'✈️ 金浦机场'}};
+ function addLinks(){
+   const nav=document.querySelector('.navActions'); if(!nav||nav.querySelector('[data-ke-extra]'))return;
+   const anchor=nav.querySelector('.langswitch');
+   [['hotel-guide.html','hotel'],['wowpass-guide.html','wow'],['gimpo-airport-guide.html','gimpo']].forEach(([href,key])=>{const a=document.createElement('a');a.href=href;a.className='topShortcut';a.dataset.keExtra=key;a.dataset.keKey=key;nav.insertBefore(a,anchor)});
+ }
+ function paint(){const l=(typeof lang!=='undefined'?lang:localStorage.getItem('koreaEasyLang'))||'en';document.querySelectorAll('[data-ke-extra]').forEach(a=>a.textContent=(labels[l]||labels.en)[a.dataset.keKey]);}
+ addLinks();paint();
+ const oldSetLang=window.setLang; if(typeof oldSetLang==='function')window.setLang=function(l){oldSetLang(l);paint()};
+})();
