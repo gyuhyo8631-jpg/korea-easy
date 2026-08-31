@@ -115,16 +115,10 @@
     .route-box strong { display: block; color: var(--wine-dark); margin-bottom: 4px; }
     .source { display: inline-block; margin-top: 10px; color: #81736b; font-size: .72rem; text-decoration: none; }
     .source:hover { text-decoration: underline; }
-    .single-spot { grid-template-columns: minmax(0, 1fr); }
-    .single-spot .photo { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); }
-    .single-spot .photo > img { height: 100%; min-height: 360px; }
     footer { padding: 34px 0; border-top: 1px solid var(--line); color: #796d64; }
     @media (max-width: 800px) {
       .arrival { grid-template-columns: 1fr 1fr; }
       .grid { grid-template-columns: 1fr 1fr; }
-      .single-spot { grid-template-columns: 1fr; }
-      .single-spot .photo { display: block; }
-      .single-spot .photo > img { height: 280px; min-height: 0; }
       .langs { width: 100%; justify-content: flex-end; }
     }
     @media (max-width: 520px) {
@@ -192,7 +186,7 @@
     <section class="sec" id="photo">
       <h2 data-t="photoTitle"></h2>
       <p class="sub" data-t="photoDesc"></p>
-      <div class="grid single-spot" id="photoGrid"></div>
+      <div class="grid" id="photoGrid"></div>
     </section>
   </main>
 
@@ -211,7 +205,7 @@
         foodTitle: '전주에서 꼭 먹어볼 음식',
         foodDesc: '전주시와 PNB 공식 페이지에서 확인한 실제 음식 사진만 사용했습니다.',
         photoTitle: 'Jeonju Photo Spot',
-        photoDesc: '요청대로 사진 명소는 전주한옥마을만 남기고, 전주역 출발 버스와 하차 지점을 함께 표시했습니다.',
+        photoDesc: '전주한옥마을·경기전·전동성당의 실제 사진과 전주역 출발 버스, 하차 지점을 함께 표시했습니다.',
         footer: 'KOREA EASY · 노선, 정류장, 요금과 운행시간은 여행 당일 전주시 교통정보센터에서 다시 확인하세요.',
         dir: '지도 열기', best: '추천 시간', route: '추천 버스 노선', officialBus: '전주 실시간 버스 확인',
         photoSource: '사진 출처', routeSource: '노선 근거'
@@ -227,7 +221,7 @@
         foodTitle: 'Food to try in Jeonju',
         foodDesc: 'Only real food photos verified on official Jeonju City and PNB pages.',
         photoTitle: 'Jeonju Photo Spot',
-        photoDesc: 'As requested, only Jeonju Hanok Village remains, with the station bus route and stop.',
+        photoDesc: 'Real photos of Jeonju Hanok Village, Gyeonggijeon Shrine and Jeondong Cathedral, with station bus routes and stops.',
         footer: 'KOREA EASY · Confirm routes, stops, fares and operating hours on the Jeonju traffic site on your travel day.',
         dir: 'Open map', best: 'Best time', route: 'Recommended bus route', officialBus: 'Check live Jeonju buses',
         photoSource: 'Photo', routeSource: 'Route source'
@@ -243,7 +237,7 @@
         foodTitle: '全州で食べたい料理',
         foodDesc: '全州市とPNB公式ページで確認した実際の料理写真のみを使用しています。',
         photoTitle: '全州フォトスポット',
-        photoDesc: 'ご要望どおり全州韓屋村だけを残し、全州駅発のバスと降車停留所を表示しました。',
+        photoDesc: '全州韓屋村・慶基殿・殿洞聖堂の実写写真と、全州駅発のバス・降車停留所を表示しています。',
         footer: 'KOREA EASY · 当日の路線・停留所・料金・運行時間をご確認ください。',
         dir: '地図を開く', best: 'おすすめ時間', route: 'おすすめバス路線', officialBus: '全州の運行情報',
         photoSource: '写真', routeSource: '路線情報'
@@ -259,7 +253,7 @@
         foodTitle: '全州必吃美食',
         foodDesc: '只使用经全州市和PNB官方网站确认的真实食物照片。',
         photoTitle: '全州拍照景点',
-        photoDesc: '按您的要求只保留全州韩屋村，并标注从全州站出发的公交和下车站。',
+        photoDesc: '提供全州韩屋村、庆基殿和全洞圣堂的实拍照片，并标注从全州站出发的公交和下车站。',
         footer: 'KOREA EASY · 出行当天请再次确认路线、站点、费用和运营时间。',
         dir: '打开地图', best: '最佳时间', route: '推荐公交路线', officialBus: '查看全州实时公交',
         photoSource: '照片', routeSource: '路线依据'
@@ -374,6 +368,18 @@
         image: 'https://www.pnb1951.com/web/upload/goodymall/kr/main/mainImg001.jpg',
         sourceLabel: 'PNB 1951 · official',
         sourceUrl: 'https://www.pnb1951.com/'
+      },
+      {
+        name: 'Pi-sundae & Sundae Gukbap', ko: '전주 피순대 · 순대국밥',
+        image: 'https://tour.jeonju.go.kr/images/visitjj/contents/month/2512_mucktour/img_sec1_16.jpg',
+        sourceLabel: 'Visit Jeonju · official food road',
+        sourceUrl: 'https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000023&dataSid=16226&menuCd=DOM_000000112001000000'
+      },
+      {
+        name: 'Jeonju Hanjeongsik', ko: '전주한정식',
+        image: 'https://tour.jeonju.go.kr/images/visitjj/contents/month/2512_mucktour/img_sec1_21.jpg',
+        sourceLabel: 'Visit Jeonju · official food road',
+        sourceUrl: 'https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000023&dataSid=16226&menuCd=DOM_000000112001000000'
       }
     ];
 
@@ -389,6 +395,30 @@
           zh: '全州站迎宾路 → 79或119路 → 全洞圣堂·韩屋村 → 步行游览太祖路和银杏路'
         },
         sourceUrl: 'https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000003&dataSid=16109&menuCd=DOM_000000101006003000'
+      },
+      {
+        name: 'Gyeonggijeon Shrine', ko: '경기전',
+        image: 'https://tour.jeonju.go.kr/upload_data/board_data/BBS_0000003/177942516570092.jpg',
+        best: 'Morning / Green Season', bus: '79 · 119',
+        route: {
+          ko: '전주역 첫마중길 → 79·119번 → 전동성당·한옥마을 하차 → 경기전 정문까지 도보 약 2분',
+          en: 'Jeonju Station Cheotmajung-gil → Bus 79 or 119 → Jeondong Cathedral · Hanok Village → walk about 2 min to Gyeonggijeon',
+          ja: '全州駅チョッマジュンギル → 79・119番 → 殿洞聖堂・韓屋村 → 慶基殿正門まで徒歩約2分',
+          zh: '全州站迎宾路 → 79或119路 → 全洞圣堂·韩屋村 → 步行约2分钟到庆基殿正门'
+        },
+        sourceUrl: 'https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000003&dataSid=10115&menuCd=DOM_000000101006001000'
+      },
+      {
+        name: 'Jeondong Cathedral', ko: '전동성당',
+        image: 'https://tour.jeonju.go.kr/upload_data/board_data/BBS_0000003/176351924731021.jpg',
+        best: 'Morning / Blue Sky', bus: '79 · 119',
+        route: {
+          ko: '전주역 첫마중길 → 79·119번 → 전동성당·한옥마을 하차 → 정류장 앞 성당으로 도보 이동',
+          en: 'Jeonju Station Cheotmajung-gil → Bus 79 or 119 → Jeondong Cathedral · Hanok Village → walk from the stop to the cathedral',
+          ja: '全州駅チョッマジュンギル → 79・119番 → 殿洞聖堂・韓屋村 → 停留所前の聖堂へ徒歩',
+          zh: '全州站迎宾路 → 79或119路 → 全洞圣堂·韩屋村 → 从车站步行至教堂'
+        },
+        sourceUrl: 'https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000003&dataSid=9752&menuCd=DOM_000000101006001000'
       }
     ];
 
