@@ -52,7 +52,7 @@
 <a href="#transport" data-i18n="nav_subway">Subway</a>
 <a href="#taxi" data-i18n="nav_taxi">Taxi</a>
 <a href="#food" data-i18n="nav_food">Food</a>
-<a href="#photo" data-i18n="nav_photo">Photo</a><a href="#hot-now" data-i18n="nav_hot">Hot Now</a>
+<a href="#photo" data-i18n="nav_photo">Photo</a>
 <a href="#events" data-i18n="nav_events">Events</a>
 </div>
 <div class="navActions"><div class="langswitch">
@@ -229,20 +229,13 @@
 
 <section id="photo" class="sec">
 <h2 data-i18n="photo_title">Seoul Photo Spots</h2>
-<p class="sub" data-i18n="photo_desc" data-i18n="photo_desc">More than 70 photo locations. Filter by theme, check the nearest station and exit, then open the map.</p>
+<p class="sub" data-i18n="photo_desc">Classic Seoul landmarks and current hot places, unified with verified real photos, stations, exits and maps.</p>
 <div class="photoHelp" data-i18n="photo_directions_help">📍 Select a photo spot, then choose KakaoMap, NAVER Map or Google Maps for directions.</div>
 <div class="foodTools">
 <select id="photoTheme" onchange="renderPhoto()"><option value="All">All photo themes</option></select>
 </div>
 <div id="photoCount" class="facts"></div>
 <div id="photoGrid" class="foodGrid"></div>
-</section>
-
-<section id="hot-now" class="sec">
-<span class="eyebrow" data-i18n="hot_badge">HOT NOW · SEOUL 2026</span>
-<h2 data-i18n="hot_title">Trending Photo Spots & Hot Places</h2>
-<p class="sub" data-i18n="hot_desc">Classic icons plus neighborhoods that are especially popular right now. Every card includes the nearest station, recommended exit, best time and map.</p>
-<div id="hotGrid" class="hotGrid"></div>
 </section>
 
 <section id="events" class="sec"><h2 data-i18n="events_title">What's happening in Seoul?</h2><p class="sub" data-i18n="events_desc">Event schedules change constantly. These buttons always send travelers to official current calendars rather than leaving stale dates on the site.</p>
@@ -358,7 +351,7 @@ const I18N = {
   subway_title:"Subway Route + Exit Guide",subway_desc:"Pick your destination. Where a reusable exit photo has been verified, it appears directly in the route. Otherwise use the map/exit-view button.",
   exit_title:"What should I see?",taxi_title:"Is My Taxi Fare OK?",taxi_desc:"Use this as a reference before riding. Airport international-taxi section fares use Seoul's official zone table. Seoul-to-Seoul estimates are rough meter-based ranges, not quotations.",uber_kicker:"EXTERNAL RIDE",uber_title:"Call Uber Taxi",uber_desc:"Open Uber with your selected destination. Confirm your pickup location in Uber.",uber_destination_label:"Destination ready",uber_button:"Open Uber Taxi",uber_note:"Uber is an independent service. Availability, vehicle type, fare and payment are confirmed in Uber.",
   food_title:"Food by Seoul District",food_desc:"Choose a district first, then choose a neighborhood. Each restaurant card shows category, price, nearest station and recommended exit.",
-  district:"DISTRICT",neighborhood:"NEIGHBORHOOD",photo_title:"Seoul Photo Spots",photo_desc:"More than 70 photo locations. Filter by theme, check the nearest station and exit, then open the map.",
+  district:"DISTRICT",neighborhood:"NEIGHBORHOOD",photo_title:"Seoul Photo Spots",photo_desc:"Classic Seoul landmarks and current hot places, unified with verified real photos, stations, exits and maps.",
    events_title:"What's happening in Seoul?",events_desc:"Event schedules change constantly. These buttons always send travelers to official current calendars rather than leaving stale dates on the site.",official_photos:"Official photos",
   outside_title:"Going outside Seoul?",open_map:"Directions",show_more:"Show more",photo_directions_help:"📍 Select a photo spot, then choose KakaoMap, NAVER Map or Google Maps for directions.",all_food:"All food types",all_photo:"All photo themes",price:"Price guide",best_time:"Best time"
  },
@@ -370,7 +363,7 @@ const I18N = {
   subway_title:"地下鉄ルート＋出口ガイド",subway_desc:"目的地を選ぶと、地下鉄ルート、駅、出口を表示します。利用可能な出口写真がある場合は写真も表示します。",
   exit_title:"出口では何が見える？",taxi_title:"タクシー料金は適正？",taxi_desc:"乗車前の参考料金です。空港国際タクシーはソウル市の公式ゾーン料金を表示し、市内料金は概算です。",uber_kicker:"外部配車サービス",uber_title:"Uber Taxiを呼ぶ",uber_desc:"選択した目的地をUberに渡します。乗車場所はUberで確認してください。",uber_destination_label:"目的地を設定",uber_button:"Uber Taxiを開く",uber_note:"Uberは独立した外部サービスです。配車可否、車種、料金、支払いはUberで確認してください。",
   food_title:"ソウル区別グルメ",food_desc:"まず区を選び、その次にエリアを選んでください。各店舗に料理カテゴリー、価格帯、最寄り駅、推奨出口を表示します。",
-  district:"区",neighborhood:"エリア",photo_title:"ソウル写真スポット",photo_desc:"70か所以上の写真スポットをテーマ別に検索できます。最寄り駅・出口・地図も確認できます。",
+  district:"区",neighborhood:"エリア",photo_title:"ソウル写真スポット",photo_desc:"ソウルの定番名所と話題のスポットを、確認済みの実写・最寄り駅・出口・地図とともに一つにまとめました。",
    events_title:"ソウルのイベント",events_desc:"イベント日程は変わるため、常にソウル市・Visit Seoulの公式最新情報へリンクします。",official_photos:"公式写真を見る",
   outside_title:"ソウル郊外へ行くなら",open_map:"経路案内",show_more:"もっと見る",photo_directions_help:"📍 写真スポットを選び、KakaoMap・NAVER Map・Google Mapsで経路を確認できます。",all_food:"すべての料理",all_photo:"すべてのテーマ",price:"価格帯",best_time:"おすすめ時間"
  },
@@ -382,7 +375,7 @@ const I18N = {
   subway_title:"地铁路线＋出口指南",subway_desc:"选择目的地后，可查看地铁路线、车站和推荐出口。若有可合法使用的出口照片，也会直接显示。",
   exit_title:"出站后应该看到什么？",taxi_title:"出租车费用合理吗？",taxi_desc:"此费用仅供乘车前参考。机场国际出租车使用首尔市官方分区费用，首尔市内为估算范围。",uber_kicker:"外部叫车服务",uber_title:"呼叫 Uber Taxi",uber_desc:"将选定目的地发送至 Uber。请在 Uber 中确认上车地点。",uber_destination_label:"目的地已设置",uber_button:"打开 Uber Taxi",uber_note:"Uber 是独立的外部服务。车辆、价格、可用性和付款请在 Uber 中确认。",
   food_title:"按首尔行政区找美食",food_desc:"先选择行政区，再选择街区。每家餐厅都会显示类别、价格、最近车站和推荐出口。",
-  district:"行政区",neighborhood:"街区",photo_title:"首尔拍照景点",photo_desc:"70多个拍照地点，可按主题筛选，并查看最近地铁站、出口和地图。",
+  district:"行政区",neighborhood:"街区",photo_title:"首尔拍照景点",photo_desc:"将首尔经典景点和当前热门地点整合在一起，并提供已确认的实景照片、车站、出口和地图。",
    events_title:"首尔近期活动",events_desc:"活动日期经常变化，因此页面会链接到首尔市和 Visit Seoul 的官方最新日程。",official_photos:"查看官方照片",
   outside_title:"前往首尔以外地区",open_map:"路线导航",show_more:"查看更多",photo_directions_help:"📍 选择拍照地点，然后使用 KakaoMap、NAVER Map 或 Google Maps 查看路线。",all_food:"全部美食类型",all_photo:"全部拍照主题",price:"价格",best_time:"最佳时间"
  }
