@@ -308,6 +308,27 @@ function foodPhoto(cat){const c=String(cat).toLowerCase();if(/noodle|국수|면|
 function renderFood(reset){if(reset)foodLimit=12;const q=document.getElementById('foodSearch').value.toLowerCase(),cat=document.getElementById('foodCat').value||'All';let arr=(food[current]||[]).filter(x=>(cat==='All'||x.cat===cat)&&(!q||[x.name,x.local,x.cat].join(' ').toLowerCase().includes(q)));document.getElementById('foodCount').textContent=`${arr.length} ${tr('places')} · ${districtLabel(currentDistrict)} → ${placeLabel(current)}`;document.getElementById('foodGrid').innerHTML=arr.slice(0,foodLimit).map(x=>`<article class="mini hasPhoto"><img class="photoThumb" src="${foodPhoto(x.cat)}" alt="${x.cat} representative food" title="Representative food image" loading="lazy"><div class="meta">${catLabel(x.cat)}</div><h4>${x.name}</h4><div class="local">${x.local}</div><div class="facts">${tr('price')}: ${x.price}<br>🚇 ${stationLabel(x.station)} · <b>${exitLabel(x.exit)}</b></div><div class="btns">${officialPhotoButton(x)}${guideButton(x)}</div></article>`).join('');document.getElementById('moreBtn').style.display=foodLimit<arr.length?'inline-block':'none'}
 const renderFoodWithPhotos=renderFood;renderFood=function(reset){renderFoodWithPhotos(reset);const seen=new Set();document.querySelectorAll('#foodGrid .photoThumb').forEach(img=>{if(seen.has(img.src)){img.remove();return}seen.add(img.src)})}
 function showMore(){foodLimit+=12;renderFood(false)}
+const PHOTO_FOOD_AREA={
+ "Seongsu Yeonmujang-gil":["Seongdong-gu","Seongsu"],
+ "Yongridan-gil":["Yongsan-gu","Itaewon"],
+ "Haebangchon":["Yongsan-gu","Itaewon"],
+ "Hannam-dong":["Yongsan-gu","Itaewon"],
+ "Yeonnam-dong":["Mapo-gu","Hongdae"],
+ "Hongdae Red Road":["Mapo-gu","Hongdae"],
+ "Mangridan-gil & Mangwon Market":["Mapo-gu","Hongdae"],
+ "Apgujeong Rodeo Street":["Gangnam-gu","Gangnam"],
+ "Ikseon-dong Hanok Street":["Jongno-gu","Jongno"],
+ "Starfield Library COEX":["Gangnam-gu","Gangnam"],
+ "N Seoul Tower":["Jung-gu","Myeongdong"],
+ "Myeongdong Cathedral":["Jung-gu","Myeongdong"],
+ "Seoullo 7017":["Jung-gu","Myeongdong"]
+};
+function openNearbyFood(name){
+ const target=PHOTO_FOOD_AREA[photoKey(name)]||["Jung-gu","Myeongdong"];
+ currentDistrict=target[0];current=target[1];foodLimit=12;
+ renderDistrictTabs();renderNeighborhoodTabs();renderCats();renderFood(true);
+ document.getElementById('food')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
 function renderPhoto(){
  const featured=(typeof HOTSPOTS!=='undefined'?HOTSPOTS:[]).map(x=>({
    name:x.name,local:x.local,theme:x.theme.split(' / ')[0],station:x.station,exit:x.exit,
@@ -330,7 +351,7 @@ function renderPhoto(){
    <div class="facts">📸 ${tr('best_time')}: ${x.time}<br>🚇 ${stationLabel(x.station)} · ${exitLabel(x.exit)}<br>💡 ${x.tip}</div>
    ${photoSourceFor(x.name)?`<a class="hotPhotoSource" href="${photoSourceFor(x.name)}" target="_blank" rel="noopener">Actual photo source</a>`:''}
    <div class="btns">${guideButton(x)}
-   <a class="btn soft" href="#food">${tr('nearby_food')}</a></div>
+   <button class="btn soft" type="button" onclick="openNearbyFood('${x.name.replaceAll("'","\\'")}')">🍜 ${tr('nearby_food')}</button></div>
  </article>`).join('');
 }
 function uberRideUrl(dest){const x=areas[dest];if(!x)return 'https://m.uber.com/looking';const drop={latitude:x.lat,longitude:x.lon,addressLine1:`${dest}, Seoul`,addressLine2:`${x.station}, Seoul, South Korea`};const params=new URLSearchParams();params.set('pickup','my_location');params.append('drop[0]',JSON.stringify(drop));return `https://m.uber.com/looking?${params.toString()}`}
