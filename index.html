@@ -321,8 +321,8 @@ function renderPhoto(){
  sel.innerHTML=themes.map(t=>`<option value="${t}">${t==='All'?tr('all_photo'):t}</option>`).join('');
  if(themes.includes(old)) sel.value=old; else sel.value='All';
  const theme=sel.value;
- const arr=photos[current].filter(x=>theme==='All'||x.theme===theme);
- document.getElementById('photoCount').textContent=`${arr.length} ${tr('photo_spots')} · ${placeLabel(current)}`;
+ const all=photos[current].filter(x=>theme==='All'||x.theme===theme),arr=all.filter(x=>photoFor(x.name));
+ document.getElementById('photoCount').textContent=`${arr.length} verified actual photos · ${placeLabel(current)}`;
  document.getElementById('photoGrid').innerHTML=arr.map(x=>`<article class="mini ${photoFor(x.name)?'hasPhoto':''}">
    ${photoFor(x.name)?`<img class="photoThumb" src="${photoFor(x.name)}" alt="Actual photo of ${x.name}" loading="lazy" onerror="this.remove()">`:''}
    <div class="meta">${x.theme}</div>
