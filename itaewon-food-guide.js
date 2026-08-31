@@ -24,15 +24,17 @@ function renderItaewonFood(){
 }
 function setItaewonFilter(filter){itaewonFilter=filter;renderItaewonFood()}
 
-// KOREA EASY arrival & stay shortcuts
+// KOREA EASY arrival, stay and fixed regional-city shortcuts
 (function(){
  const labels={en:{hotel:'🏨 Hotel',wow:'💳 WOWPASS',gimpo:'✈️ Gimpo Airport'},ja:{hotel:'🏨 ホテル',wow:'💳 WOWPASS',gimpo:'✈️ 金浦空港'},zh:{hotel:'🏨 酒店',wow:'💳 WOWPASS',gimpo:'✈️ 金浦机场'}};
+ function rewriteRegionalLinks(){document.querySelectorAll('a[href*="CITY-EASY.html?city="]').forEach(a=>{a.href=a.href.replace('CITY-EASY.html?city=','CITY-EASY-V2.html?city=')})}
  function addLinks(){
+   rewriteRegionalLinks();
    const nav=document.querySelector('.navActions'); if(!nav||nav.querySelector('[data-ke-extra]'))return;
    const anchor=nav.querySelector('.langswitch');
    [['hotel-guide.html','hotel'],['wowpass-guide.html','wow'],['gimpo-airport-guide.html','gimpo']].forEach(([href,key])=>{const a=document.createElement('a');a.href=href;a.className='topShortcut';a.dataset.keExtra=key;a.dataset.keKey=key;nav.insertBefore(a,anchor)});
  }
  function paint(){const l=(typeof lang!=='undefined'?lang:localStorage.getItem('koreaEasyLang'))||'en';document.querySelectorAll('[data-ke-extra]').forEach(a=>a.textContent=(labels[l]||labels.en)[a.dataset.keKey]);}
  addLinks();paint();
- const oldSetLang=window.setLang; if(typeof oldSetLang==='function')window.setLang=function(l){oldSetLang(l);paint()};
+ const oldSetLang=window.setLang; if(typeof oldSetLang==='function')window.setLang=function(l){oldSetLang(l);paint();rewriteRegionalLinks()};
 })();
