@@ -316,13 +316,20 @@ function renderFood(reset){if(reset)foodLimit=12;const q=document.getElementById
 const renderFoodWithPhotos=renderFood;renderFood=function(reset){renderFoodWithPhotos(reset);const seen=new Set();document.querySelectorAll('#foodGrid .photoThumb').forEach(img=>{if(seen.has(img.src)){img.remove();return}seen.add(img.src)})}
 function showMore(){foodLimit+=12;renderFood(false)}
 function renderPhoto(){
- const themes=['All',...new Set(photos[current].map(x=>x.theme))];
+ const featured=(typeof HOTSPOTS!=='undefined'?HOTSPOTS:[]).map(x=>({
+   name:x.name,local:x.local,theme:x.theme.split(' / ')[0],station:x.station,exit:x.exit,
+   time:x.best,tip:x.tip,map:x.map
+ }));
+ const originals=Object.values(photos).flat();
+ const unique=new Map([...featured,...originals].map(x=>[x.name,x]));
+ const verified=[...unique.values()].filter(x=>photoFor(x.name));
+ const themes=['All',...new Set(verified.map(x=>x.theme))];
  const sel=document.getElementById('photoTheme'), old=sel.value||'All';
  sel.innerHTML=themes.map(t=>`<option value="${t}">${t==='All'?tr('all_photo'):t}</option>`).join('');
  if(themes.includes(old)) sel.value=old; else sel.value='All';
  const theme=sel.value;
- const all=photos[current].filter(x=>theme==='All'||x.theme===theme),arr=all.filter(x=>photoFor(x.name));
- document.getElementById('photoCount').textContent=`${arr.length} verified actual photos · ${placeLabel(current)}`;
+ const arr=verified.filter(x=>theme==='All'||x.theme===theme);
+ document.getElementById('photoCount').textContent=`${arr.length} verified actual photos · Seoul`;
  document.getElementById('photoGrid').innerHTML=arr.map(x=>`<article class="mini ${photoFor(x.name)?'hasPhoto':''}">
    ${photoFor(x.name)?`<img class="photoThumb" src="${photoFor(x.name)}" alt="Actual photo of ${x.name}" loading="lazy" onerror="this.remove()">`:''}
    <div class="meta">${x.theme}</div>
