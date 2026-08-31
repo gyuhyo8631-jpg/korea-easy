@@ -324,10 +324,11 @@ function renderPhoto(){
  const arr=photos[current].filter(x=>theme==='All'||x.theme===theme);
  document.getElementById('photoCount').textContent=`${arr.length} ${tr('photo_spots')} · ${placeLabel(current)}`;
  document.getElementById('photoGrid').innerHTML=arr.map(x=>`<article class="mini ${photoFor(x.name)?'hasPhoto':''}">
-   ${photoFor(x.name)?`<img class="photoThumb" src="${photoFor(x.name)}" alt="${x.name}" loading="lazy">`:''}
+   ${photoFor(x.name)?`<img class="photoThumb" src="${photoFor(x.name)}" alt="Actual photo of ${x.name}" loading="lazy" onerror="this.remove()">`:''}
    <div class="meta">${x.theme}</div>
    <h4>${x.name}</h4>
    <div class="facts">📸 ${tr('best_time')}: ${x.time}<br>🚇 ${stationLabel(x.station)} · ${exitLabel(x.exit)}<br>💡 ${x.tip}</div>
+   ${photoSourceFor(x.name)?`<a class="hotPhotoSource" href="${photoSourceFor(x.name)}" target="_blank" rel="noopener">Actual photo source</a>`:''}
    <div class="btns">${guideButton(x)}
    <a class="btn soft" href="#food">${tr('nearby_food')}</a></div>
  </article>`).join('');
@@ -399,7 +400,10 @@ const GUIDE_COPY={
  ja:{title:'目的地',desc:'使用する地図アプリを選択してください。',open:'経路案内を開く',note:'地図アプリまたはウェブ版が開きます。'},
  zh:{title:'前往',desc:'请选择您常用的地图应用。',open:'打开路线导航',note:'将打开地图应用或网页版地图。'}
 };
-function photoFor(name){return PHOTO_ASSETS[name]||''}
+const PHOTO_NAME_ALIASES={"Seochon Alley":"Seochon","Yeonmujang-gil":"Seongsu Yeonmujang-gil","Lotte World Tower Plaza":"Lotte World Tower & Seoul Sky","Lotte World Tower from Seokchon Lake":"Lotte World Tower & Seoul Sky"};
+function photoKey(name){return PHOTO_NAME_ALIASES[name]||name}
+function photoFor(name){const key=photoKey(name);return PHOTO_ASSETS[key]||(typeof HOTSPOT_PHOTOS!=='undefined'&&HOTSPOT_PHOTOS[key]?.img)||''}
+function photoSourceFor(name){const key=photoKey(name);return(typeof HOTSPOT_PHOTOS!=='undefined'&&HOTSPOT_PHOTOS[key]?.source)||''}
 function guideButton(x){return `<button class="btn green guideBtn" type="button" data-name="${encodeURIComponent(x.name||'Seoul destination')}" data-local="${encodeURIComponent(x.local||'')}" data-map="${encodeURIComponent(x.map||'')}" onclick="openGuideButton(this)">${tr('open_map')}</button>`}
 function openGuideButton(button){openGuide({name:decodeURIComponent(button.dataset.name||''),local:decodeURIComponent(button.dataset.local||''),map:decodeURIComponent(button.dataset.map||'')})}
 function openGuide(item){
