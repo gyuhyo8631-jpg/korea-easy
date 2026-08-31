@@ -99,6 +99,7 @@
     .card h3, .card h4 { margin: 8px 0; }
     .btn { display: inline-block; background: var(--green); color: #fff; margin-top: 10px; }
     .btn.secondary { background: #fff; color: var(--green-dark); border: 1px solid #b9d2c7; }
+    .tmoney-step-link { display: inline-block; margin-top: 12px; padding: 9px 12px; border-radius: 10px; background: #c83f34; color: #fff; text-decoration: none; font-size: .78rem; font-weight: 950; box-shadow: 0 7px 16px #8f211c24; }
 
     .photo { padding: 0; overflow: hidden; }
     .photo > img { width: 100%; height: 220px; object-fit: cover; display: block; background: #e9eee9; }
@@ -234,7 +235,7 @@
         best: '추천 시간',
         route: '제주공항 버스 노선',
         officialBus: '제주버스 실시간 확인',
-        photoSource: '사진 출처'
+        tmoneyGuide: 'T-money 구매·충전 안내 →', photoSource: '사진 출처'
       },
       en: {
         title: 'Jeju,<br>Island Made Easy.',
@@ -256,7 +257,7 @@
         best: 'Best time',
         route: 'Bus route from Jeju Airport',
         officialBus: 'Check live Jeju buses',
-        photoSource: 'Photo'
+        tmoneyGuide: 'Open purchase & top-up guide →', photoSource: 'Photo'
       },
       ja: {
         title: '済州、<br>島旅を簡単に。',
@@ -278,7 +279,7 @@
         best: 'おすすめ時間',
         route: '済州空港からのバス路線',
         officialBus: '済州バス運行情報',
-        photoSource: '写真'
+        tmoneyGuide: '購入・チャージガイドを開く →', photoSource: '写真'
       },
       zh: {
         title: '济州，<br>海岛旅行更简单。',
@@ -300,7 +301,7 @@
         best: '最佳时间',
         route: '济州机场出发公交路线',
         officialBus: '查看济州公交实时信息',
-        photoSource: '照片'
+        tmoneyGuide: '打开购买与充值指南 →', photoSource: '照片'
       }
     };
 
@@ -550,6 +551,7 @@
           <div class="meta">0${index + 1}</div>
           <h4>${item[0]} ${item[1]}</h4>
           <div class="facts">${item[2]}</div>
+          ${index === 1 ? `<a class="tmoney-step-link" href="tmoney-guide-foreigners.html">${t.tmoneyGuide}</a>` : ''}
         </article>
       `).join('');
 
