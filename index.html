@@ -80,20 +80,20 @@
       </div>
       <h2 data-t="question">Where are you going?</h2>
       <div class="cities" aria-label="Choose your destination">
-        <a class="city major" href="SEOUL-EASY.html">SEOUL</a>
-        <a class="city major" href="BUSAN-EASY.html">BUSAN</a>
-        <a class="city major" href="JEJU-EASY.html">JEJU</a>
-        <a class="city local" href="GANGNEUNG-EASY.html">GANGNEUNG</a>
-        <a class="city local" href="JEONJU-EASY.html">JEONJU</a>
-        <a class="city local" href="GYEONGJU-EASY.html">GYEONGJU</a>
+        <a class="city major" href="SEOUL-EASY.html" data-t="seoul">SEOUL</a>
+        <a class="city major" href="BUSAN-EASY.html" data-t="busan">BUSAN</a>
+        <a class="city major" href="JEJU-EASY.html" data-t="jeju">JEJU</a>
+        <a class="city local" href="GANGNEUNG-EASY.html" data-t="gangneung">GANGNEUNG</a>
+        <a class="city local" href="JEONJU-EASY.html" data-t="jeonju">JEONJU</a>
+        <a class="city local" href="GYEONGJU-EASY.html" data-t="gyeongju">GYEONGJU</a>
       </div>
       <div class="airports">
         <strong data-t="airport">Start from the airport</strong>
         <div class="airportGrid">
-          <a class="airport" href="incheon-airport-to-seoul.html">✈️ Incheon Airport</a>
-          <a class="airport" href="gimpo-airport-guide.html">✈️ Gimpo Airport</a>
-          <a class="airport" href="BUSAN-EASY.html">✈️ Gimhae Airport</a>
-          <a class="airport" href="JEJU-EASY.html">✈️ Jeju Airport</a>
+          <a class="airport" href="incheon-airport-to-seoul.html" data-t="incheon">✈️ Incheon Airport</a>
+          <a class="airport" href="gimpo-airport-guide.html" data-t="gimpo">✈️ Gimpo Airport</a>
+          <a class="airport" href="BUSAN-EASY.html" data-t="gimhae">✈️ Gimhae Airport</a>
+          <a class="airport" href="JEJU-EASY.html" data-t="jejuAirport">✈️ Jeju Airport</a>
         </div>
       </div>
     </section>
@@ -101,9 +101,9 @@
   <footer class="wrap">KOREA EASY · Independent Korea travel guide</footer>
   <script>
     const copy={
-      en:{chat:'Join Chat',headline:'Know before<br>you go.',lead:'Choose your destination and open a dedicated travel guide.',question:'Where are you going?',airport:'Start from the airport'},
-      ja:{chat:'チャット',headline:'行く前に<br>知っておこう。',lead:'目的地を選んで、専用の旅行ガイドを開きましょう。',question:'どこへ行きますか？',airport:'空港からスタート'},
-      zh:{chat:'聊天',headline:'出发前<br>先了解。',lead:'选择目的地，打开专属旅行指南。',question:'你要去哪里？',airport:'从机场出发'}
+      en:{chat:'Join Chat',headline:'Know before<br>you go.',lead:'Choose your destination and open a dedicated travel guide.',question:'Where are you going?',airport:'Start from the airport',seoul:'SEOUL',busan:'BUSAN',jeju:'JEJU',gangneung:'GANGNEUNG',jeonju:'JEONJU',gyeongju:'GYEONGJU',incheon:'✈️ Incheon Airport',gimpo:'✈️ Gimpo Airport',gimhae:'✈️ Gimhae Airport',jejuAirport:'✈️ Jeju Airport'},
+      ja:{chat:'チャット',headline:'行く前に<br>知っておこう。',lead:'目的地を選んで、専用の旅行ガイドを開きましょう。',question:'どこへ行きますか？',airport:'空港からスタート',seoul:'ソウル',busan:'釜山',jeju:'済州',gangneung:'江陵',jeonju:'全州',gyeongju:'慶州',incheon:'✈️ 仁川空港',gimpo:'✈️ 金浦空港',gimhae:'✈️ 金海空港',jejuAirport:'✈️ 済州空港'},
+      zh:{chat:'聊天',headline:'出发前<br>先了解。',lead:'选择目的地，打开专属旅行指南。',question:'你要去哪里？',airport:'从机场出发',seoul:'首尔',busan:'釜山',jeju:'济州',gangneung:'江陵',jeonju:'全州',gyeongju:'庆州',incheon:'✈️ 仁川机场',gimpo:'✈️ 金浦机场',gimhae:'✈️ 金海机场',jejuAirport:'✈️ 济州机场'}
     };
     function setLang(lang){
       document.documentElement.lang=lang==='zh'?'zh-CN':lang;
