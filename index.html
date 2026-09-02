@@ -38,6 +38,11 @@
 </head>
 <body>
 <style>.hero .quick{margin-top:44px}.mainShortcuts{display:flex;gap:8px;padding:0 0 10px;flex-wrap:wrap}.mainShortcuts a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 14px;border-radius:999px;font-size:.78rem;font-weight:950;background:#edf2f7;border:1px solid #cbd5e1;color:#334155;box-shadow:0 4px 12px #24352d14;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.mainShortcuts a:hover{transform:translateY(-2px);box-shadow:0 7px 16px #24352d24;filter:saturate(1.08)}.mainShortcuts .tmoney{background:#dff3e7;border:1px solid #91c9a7;color:#145a39}.mainShortcuts .subway{background:#fff0bd;border:1px solid #e0bd45;color:#6b4d00}.mainShortcuts a[href*="rental-car"]{background:#ffe4cf;border-color:#f2b188;color:#8a3b12}.mainShortcuts a[href="hotel-guide.html"]{background:#ffe3ec;border-color:#eda9be;color:#8b2849}.mainShortcuts a[href="wowpass-guide.html"]{background:#e4e8ff;border-color:#aeb9ef;color:#293f8f}.mainShortcuts a[href="gimpo-airport-guide.html"]{background:#dff3ff;border-color:#91cbed;color:#155c83}</style>
+<style>
+.mobileHome{position:relative;overflow:hidden;margin-top:18px;padding:34px;border:1px solid #d7dfd6;border-radius:28px;background:linear-gradient(135deg,#fffdf8f7,#edf4eef2),url('assets/korea-easy-hanji-sansuhwa-hero.svg') center/cover;box-shadow:0 22px 58px #29413216}.mobileHomeTop{display:grid;grid-template-columns:1.05fr .95fr;align-items:end;gap:24px;margin-bottom:24px}.mobileHome .homeEyebrow{display:inline-flex;align-items:center;gap:7px;margin-bottom:10px;color:var(--g);font-size:.76rem;font-weight:950;letter-spacing:.08em}.mobileHome h1{margin:0;font-size:clamp(2.4rem,6vw,4.8rem);line-height:.98;letter-spacing:-.05em}.mobileHomeLead{margin:0;color:#53635a;line-height:1.65}.destinationTitle{margin:0 0 14px;font-size:clamp(1.45rem,4vw,2.2rem);letter-spacing:-.035em}.destinationGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.destinationCard{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:86px;padding:18px;border:1px solid transparent;border-radius:18px;font-size:1.05rem;font-weight:950;box-shadow:0 10px 24px #31483b16;transition:transform .18s ease,box-shadow .18s ease}.destinationCard:after{content:'›';font-size:1.65rem;line-height:1}.destinationCard:hover{transform:translateY(-2px);box-shadow:0 14px 28px #31483b25}.destinationCard.major{background:#4a78c9;border-color:#3769bc;color:#fff}.destinationCard.local{background:#ffcaca;border-color:#edaeae;color:#482d2d}.airportStart{margin-top:18px;padding-top:18px;border-top:1px solid #d5ddd4}.airportStartLabel{display:block;margin-bottom:10px;color:var(--muted);font-size:.8rem;font-weight:900}.airportLinks{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.airportLink{display:flex;align-items:center;justify-content:center;min-height:54px;padding:10px;border:1px solid #b9cae8;border-radius:14px;background:#eef4ff;color:#285490;font-size:.82rem;font-weight:900;text-align:center}.airportLink:hover{background:#dfeaff}
+@media(max-width:760px){.mobileHome{margin-top:10px;padding:24px 18px;border-radius:22px}.mobileHomeTop{grid-template-columns:1fr;gap:10px;margin-bottom:20px}.mobileHome h1{font-size:2.55rem}.mobileHomeLead{font-size:.95rem}.destinationGrid{grid-template-columns:repeat(2,1fr);gap:10px}.destinationCard{min-height:76px;padding:15px 14px;font-size:.98rem;border-radius:16px}.airportLinks{grid-template-columns:repeat(2,1fr)}.links{display:none!important}}
+@media(max-width:520px){header nav{min-height:60px;padding:8px 0;display:grid;grid-template-columns:auto 1fr;gap:6px 10px}.navActions{order:initial!important;width:auto!important;display:flex!important;justify-content:flex-end!important;gap:5px!important}.navActions .langswitch{grid-column:auto!important}.accountShortcut{padding:7px 9px!important;font-size:.69rem!important}.langbtn{min-width:34px;padding:7px 7px;font-size:.68rem}.langbtn[data-lang="ja"]{font-size:0}.langbtn[data-lang="ja"]:after{content:'日本';font-size:.68rem}.langbtn[data-lang="zh"]{font-size:0}.langbtn[data-lang="zh"]:after{content:'中文';font-size:.68rem}.mainShortcuts{display:none!important}.mobileHome{min-height:calc(100svh - 82px);display:flex;flex-direction:column;justify-content:center}.destinationTitle{font-size:1.55rem}.destinationCard{min-height:72px}.airportLink{min-height:52px}}
+</style>
 <style>.intercityGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}.intercityCard{background:#fffdf8;border:1px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 12px 30px #4157460c}.intercityCard h3{margin:0 0 14px;font-size:1.35rem}.routeChoice{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.routeChoice:first-of-type{border-top:0}.routeMode{font-weight:950;color:var(--g)}.routeDetail{line-height:1.6;color:#45544c}.routeTime{display:inline-block;margin-top:5px;color:var(--muted);font-size:.78rem}.bookingRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.bookingRow a{padding:9px 12px;border-radius:11px;font-size:.8rem;font-weight:900}.korailBtn{background:#245aa5;color:white}.kobusBtn{background:#d65342;color:white}.intercityNote{margin-top:15px;color:var(--muted);font-size:.8rem;line-height:1.6}@media(max-width:700px){.intercityGrid{grid-template-columns:1fr}.routeChoice{grid-template-columns:78px 1fr}}</style>
 <style>.hotCard{overflow:hidden}.hotPhoto{display:block;width:calc(100% + 36px);height:190px;object-fit:cover;margin:-18px -18px 14px;background:#e7ede9}.hotPhotoSource{display:block;margin-top:10px;color:var(--muted);font-size:.68rem;line-height:1.4}</style>
 <header><nav class="wrap">
@@ -57,25 +62,30 @@
 <a href="#photo" data-i18n="nav_photo">Photo</a>
 <a href="#events" data-i18n="nav_events">Events</a>
 </div>
-<div class="navActions"><a class="accountShortcut" href="account.html" style="display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border-radius:999px;background:#173a29;border:1px solid #173a29;color:#fff;font-size:.78rem;font-weight:950;white-space:nowrap">👥 Sign in &amp; Chat</a><div class="langswitch">
+<div class="navActions"><a class="accountShortcut" href="account.html" style="display:inline-flex;align-items:center;gap:5px;padding:8px 11px;border-radius:999px;background:#173a29;border:1px solid #173a29;color:#fff;font-size:.78rem;font-weight:950;white-space:nowrap">👥 Join Chat</a><div class="langswitch">
 <button class="langbtn on" data-lang="en" onclick="setLang('en')">EN</button>
 <button class="langbtn" data-lang="ja" onclick="setLang('ja')">日本語</button>
 <button class="langbtn" data-lang="zh" onclick="setLang('zh')">中文</button>
 </div></div>
 </nav><div class="wrap mainShortcuts"><a class="tmoney" href="tmoney-guide-foreigners.html">💳 T-money</a><a href="toilet-sos.html" style="background:#ffe4df;border:1px solid #f2b8ae;color:#9b2e23">🚻 Toilet SOS</a><a href="foreigner-savings.html" style="background:#fff0c7;border:1px solid #e7c663;color:#6f5000">💸 Foreigner Savings</a><a href="emergency-info.html" style="background:#fbe4e0;border:1px solid #e8b3aa;color:#7a2323">🚨 Emergency</a><a class="subway" href="#transport">🚇 Subway</a><a href="incheon-airport-to-seoul.html#rental-car">🚗 Rental Car</a><a href="hotel-guide.html">🏨 Hotel Compare</a><a href="wowpass-guide.html">💳 WOWPASS</a><a href="gimpo-airport-guide.html">✈️ Gimpo Airport</a></div></header>
 <main class="wrap">
-<section id="home" class="hero">
-<span class="eyebrow" data-i18n="hero_badge">KOREA EASY · TRAVEL HUB</span>
-<h1 data-i18n-html="hero_title">Korea,<br>Made Easy.</h1>
-<p class="lead" data-i18n="hero_lead">One simple place for first-time visitors: airport arrival, T-money, subway routes and exits, taxi fare checks, Seoul food, photo spots, events and intercity travel.</p>
-<div class="quick">
-<a href="#airport" data-i18n="quick_airport">✈️ Just Landed</a>
-<a href="#transport" data-i18n="quick_subway">🚇 Subway Exit</a>
-<a href="#taxi" data-i18n="quick_taxi">🚕 Taxi Check</a>
-<a href="#food" data-i18n="quick_food">🍜 Food</a>
-<a href="#photo" data-i18n="quick_photo">📸 Photo Spots</a>
-<a href="#events" data-i18n="quick_events">🎉 Events</a>
+<section id="home" class="mobileHome">
+<div class="mobileHomeTop"><div><span class="homeEyebrow">📍 KOREA EASY</span><h1>Know before<br>you go.</h1></div><p class="mobileHomeLead">Airport arrival, transport and city guides in one simple flow.</p></div>
+<h2 class="destinationTitle">Where are you going?</h2>
+<div class="destinationGrid" aria-label="Choose your destination">
+<a class="destinationCard major" href="#airport">SEOUL</a>
+<a class="destinationCard major" href="BUSAN-EASY.html">BUSAN</a>
+<a class="destinationCard major" href="JEJU-EASY.html">JEJU</a>
+<a class="destinationCard local" href="GANGNEUNG-EASY.html">GANGNEUNG</a>
+<a class="destinationCard local" href="JEONJU-EASY.html">JEONJU</a>
+<a class="destinationCard local" href="GYEONGJU-EASY.html">GYEONGJU</a>
 </div>
+<div class="airportStart"><span class="airportStartLabel">Start from the airport</span><div class="airportLinks">
+<a class="airportLink" href="incheon-airport-to-seoul.html">✈️ Incheon Airport</a>
+<a class="airportLink" href="gimpo-airport-guide.html">✈️ Gimpo Airport</a>
+<a class="airportLink" href="BUSAN-EASY.html">✈️ Gimhae Airport</a>
+<a class="airportLink" href="JEJU-EASY.html">✈️ Jeju Airport</a>
+</div></div>
 </section>
 
 <section id="why-korea-easy" class="sec">
