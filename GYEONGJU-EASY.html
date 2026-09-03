@@ -68,8 +68,9 @@
     .hero h1 { font-size: clamp(3rem, 8vw, 6.5rem); line-height: .9; margin: 16px 0; }
     .eyebrow, .meta { font-size: .76rem; font-weight: 950; letter-spacing: .08em; color: var(--gold); }
     .lead { max-width: 780px; line-height: 1.7; color: #f2e8dd; }
-    .quick { margin-top: 24px; }
-    .quick a { background: #fff; color: var(--ink); }
+    .quick { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .quick a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; background: #fff; color: var(--ink); white-space: nowrap; line-height: 1.2; }
+    .quick a[href="toilet-sos.html"] { background: #fff1ee; border: 1px solid #eab6ac; color: #84291f; }
     .sec { padding: 48px 0; }
     .sec h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin: 0 0 8px; }
     .sub, .facts { color: var(--muted); line-height: 1.7; }
@@ -156,7 +157,7 @@
       <h1 id="title"></h1>
       <p class="lead" id="lead"></p>
       <div class="quick">
-        <a href="https://www.t-money.co.kr/" target="_blank" rel="noopener">💳 T-money 카드 안내</a><a href="toilet-sos.html">🚻 Toilet SOS</a><a href="foreigner-savings.html" style="background:#fff0c7;border-color:#e7c663;color:#6f5000">💸 Foreigner Savings</a>
+        <a href="https://www.t-money.co.kr/" target="_blank" rel="noopener">💳 T-money 카드 안내</a><a href="toilet-sos.html" aria-label="가까운 화장실 찾기">🚻 Toilet</a><a href="foreigner-savings.html" style="background:#fff0c7;border-color:#e7c663;color:#6f5000">💸 Foreigner Savings</a>
         <a href="#arrival" data-t="arrival"></a>
         <a href="#transport" data-t="transport"></a>
         <a href="#food" data-t="food"></a>
