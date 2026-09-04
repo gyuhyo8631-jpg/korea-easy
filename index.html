@@ -48,9 +48,10 @@
     .airports strong{display:block;margin-bottom:10px;color:var(--muted);font-size:.82rem}
     .airportGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
     .airport{display:flex;align-items:center;justify-content:center;min-height:54px;padding:10px;border:1px solid #cbbf9e;border-radius:14px;background:linear-gradient(180deg,#fffdf8,#f3eee1);color:#405a4b;font-size:.82rem;font-weight:900;text-align:center;box-shadow:inset 0 3px 0 #d7a92f}
+    .essentials{margin-top:18px;padding:18px;border:1px solid #cddfd4;border-radius:18px;background:#f5fbf7}.essentials strong{display:block;margin-bottom:10px;color:var(--green);font-size:.82rem}.essentialGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.essential{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px;padding:13px 16px;border-radius:14px;font-weight:950}.essential:after{content:'›';font-size:1.5rem}.essential.toilet{border:1px solid #efbcb4;background:#fff0ed;color:#8b3027}.essential.pharmacy{border:1px solid #a9d5bd;background:#e8f6ee;color:#146344}.essential small{display:block;margin-top:3px;font-size:.7rem;font-weight:750;opacity:.78}
     footer{padding:20px 0 calc(26px + env(safe-area-inset-bottom));color:var(--muted);font-size:.78rem;text-align:center}
     @media(max-width:700px){
-      .home{padding:24px 18px;border-radius:22px}.intro{grid-template-columns:1fr;gap:9px;margin:-7px -3px 22px;padding:30px 24px 26px;min-height:215px}.cities{grid-template-columns:repeat(2,1fr);gap:9px}.city{min-height:72px;padding:14px;font-size:.92rem;border-radius:15px}.airportGrid{grid-template-columns:repeat(2,1fr)}
+      .home{padding:24px 18px;border-radius:22px}.intro{grid-template-columns:1fr;gap:9px;margin:-7px -3px 22px;padding:30px 24px 26px;min-height:215px}.cities{grid-template-columns:repeat(2,1fr);gap:9px}.city{min-height:72px;padding:14px;font-size:.92rem;border-radius:15px}.airportGrid{grid-template-columns:repeat(2,1fr)}.essentialGrid{grid-template-columns:1fr}
     }
     @media(max-width:520px){
       .wrap{width:calc(100% - 20px)}nav{min-height:60px;gap:7px}.brand{font-size:.86rem;gap:4px}.brand img{width:24px;height:24px}.navRight{gap:4px}.languages{gap:3px}.chat{min-height:38px;padding:7px 9px;font-size:.68rem}.lang{min-width:31px;min-height:38px;padding:5px;font-size:.67rem}main{padding-top:10px}.home{padding:18px 12px 16px}.eyebrow{font-size:.7rem;margin-bottom:7px}h1{font-size:2.15rem}.lead{font-size:.9rem;line-height:1.45;max-width:270px}h2{font-size:1.42rem;margin-bottom:10px}.intro{min-height:190px;margin:-5px -1px 17px;padding:28px 18px 22px;background-image:linear-gradient(90deg,#faf7f0fc 0%,#faf7f0dc 53%,#faf7f03d 100%),url('assets/korea-easy-hanji-sansuhwa-hero.svg');background-position:58% center}.koreanSeal{right:14px;top:17px;width:46px;height:46px;font-size:.66rem}.cities{gap:8px}.city{min-height:64px;padding:12px;font-size:.86rem}.city:after{font-size:1.35rem}.airports{margin-top:14px;padding-top:14px}.airports strong{font-size:.78rem;margin-bottom:8px}.airportGrid{gap:7px}.airport{min-height:48px;padding:8px 6px;font-size:.74rem;line-height:1.25}
@@ -90,6 +91,13 @@
         <a class="city local" href="JEONJU-EASY.html" data-t="jeonju">JEONJU</a>
         <a class="city local" href="GYEONGJU-EASY.html" data-t="gyeongju">GYEONGJU</a>
       </div>
+      <div class="essentials">
+        <strong data-t="essentials">Useful near your current location</strong>
+        <div class="essentialGrid">
+          <a class="essential toilet" href="toilet-sos.html"><span>🚻 <span data-t="toilet">Toilet SOS</span><small data-t="toiletDesc">Find a nearby public restroom</small></span></a>
+          <a class="essential pharmacy" href="pharmacy-sos.html"><span>💊 <span data-t="pharmacy">Pharmacy Finder</span><small data-t="pharmacyDesc">Nearby & late-night pharmacies</small></span></a>
+        </div>
+      </div>
       <div class="airports">
         <strong data-t="airport">Start from the airport</strong>
         <div class="airportGrid">
@@ -104,9 +112,9 @@
   <footer class="wrap">KOREA EASY · Independent Korea travel guide</footer>
   <script>
     const copy={
-      en:{chat:'Join Chat',headline:'Know before<br>you go.',lead:'Choose your destination and open a dedicated travel guide.',question:'Where are you going?',airport:'Start from the airport',seoul:'SEOUL',busan:'BUSAN',jeju:'JEJU',gangneung:'GANGNEUNG',jeonju:'JEONJU',gyeongju:'GYEONGJU',incheon:'✈️ Incheon Airport',gimpo:'✈️ Gimpo Airport',gimhae:'✈️ Gimhae Airport',jejuAirport:'✈️ Jeju Airport'},
-      ja:{chat:'チャット',headline:'行く前に<br>知っておこう。',lead:'目的地を選んで、専用の旅行ガイドを開きましょう。',question:'どこへ行きますか？',airport:'空港からスタート',seoul:'ソウル',busan:'釜山',jeju:'済州',gangneung:'江陵',jeonju:'全州',gyeongju:'慶州',incheon:'✈️ 仁川空港',gimpo:'✈️ 金浦空港',gimhae:'✈️ 金海空港',jejuAirport:'✈️ 済州空港'},
-      zh:{chat:'聊天',headline:'出发前<br>先了解。',lead:'选择目的地，打开专属旅行指南。',question:'你要去哪里？',airport:'从机场出发',seoul:'首尔',busan:'釜山',jeju:'济州',gangneung:'江陵',jeonju:'全州',gyeongju:'庆州',incheon:'✈️ 仁川机场',gimpo:'✈️ 金浦机场',gimhae:'✈️ 金海机场',jejuAirport:'✈️ 济州机场'}
+      en:{chat:'Join Chat',headline:'Know before<br>you go.',lead:'Choose your destination and open a dedicated travel guide.',question:'Where are you going?',essentials:'Useful near your current location',toilet:'Toilet SOS',toiletDesc:'Find a nearby public restroom',pharmacy:'Pharmacy Finder',pharmacyDesc:'Nearby & late-night pharmacies',airport:'Start from the airport',seoul:'SEOUL',busan:'BUSAN',jeju:'JEJU',gangneung:'GANGNEUNG',jeonju:'JEONJU',gyeongju:'GYEONGJU',incheon:'✈️ Incheon Airport',gimpo:'✈️ Gimpo Airport',gimhae:'✈️ Gimhae Airport',jejuAirport:'✈️ Jeju Airport'},
+      ja:{chat:'チャット',headline:'行く前に<br>知っておこう。',lead:'目的地を選んで、専用の旅行ガイドを開きましょう。',question:'どこへ行きますか？',essentials:'現在地周辺の便利な検索',toilet:'トイレ SOS',toiletDesc:'近くの公衆トイレを探す',pharmacy:'薬局検索',pharmacyDesc:'近くの薬局・深夜薬局',airport:'空港からスタート',seoul:'ソウル',busan:'釜山',jeju:'済州',gangneung:'江陵',jeonju:'全州',gyeongju:'慶州',incheon:'✈️ 仁川空港',gimpo:'✈️ 金浦空港',gimhae:'✈️ 金海空港',jejuAirport:'✈️ 済州空港'},
+      zh:{chat:'聊天',headline:'出发前<br>先了解。',lead:'选择目的地，打开专属旅行指南。',question:'你要去哪里？',essentials:'当前位置附近的实用搜索',toilet:'洗手间 SOS',toiletDesc:'查找附近的公共洗手间',pharmacy:'药店搜索',pharmacyDesc:'附近与深夜药店',airport:'从机场出发',seoul:'首尔',busan:'釜山',jeju:'济州',gangneung:'江陵',jeonju:'全州',gyeongju:'庆州',incheon:'✈️ 仁川机场',gimpo:'✈️ 金浦机场',gimhae:'✈️ 金海机场',jejuAirport:'✈️ 济州机场'}
     };
     function setLang(lang){
       document.documentElement.lang=lang==='zh'?'zh-CN':lang;
