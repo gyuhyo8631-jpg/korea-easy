@@ -3,128 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>KOREA EASY — Choose Your Destination</title>
-  <meta name="description" content="Choose Seoul, Busan, Jeju, Gangneung, Jeonju or Gyeongju and open a dedicated Korea travel guide.">
+  <title>KOREA EASY — Airport to Korea</title>
+  <meta name="description" content="Choose your arrival airport, terminal and destination, then compare AREX, airport bus, rental car and taxi options.">
   <link rel="canonical" href="https://korea.phoenix-uos.com/">
-  <meta property="og:title" content="KOREA EASY — Choose Your Destination">
-  <meta property="og:description" content="Choose a Korean city and start your trip.">
-  <meta property="og:url" content="https://korea.phoenix-uos.com/">
-  <meta property="og:type" content="website">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="manifest" href="manifest.json">
+  <meta property="og:title" content="KOREA EASY — Airport to Korea"><meta property="og:description" content="Choose your airport and find the right way into Korea."><meta property="og:url" content="https://korea.phoenix-uos.com/"><meta property="og:type" content="website"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="manifest" href="manifest.json">
   <style>
-    :root{--bg:#f4f0e7;--paper:#fffdf8;--ink:#17231d;--muted:#68736c;--green:#1e6d4d;--line:#d8e0d7;--blue:#4a78c9;--blue-dark:#3769bc;--pink:#ffcaca;--pink-dark:#edaeae}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-height:100svh;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background-color:var(--bg);background-image:linear-gradient(180deg,#faf7f0df,#f4f0e7f0),url('assets/korea-easy-hanji-texture.svg');background-size:auto,520px 520px}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(980px,calc(100% - 28px));margin:auto}
-    header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:#fffdf8ef;backdrop-filter:blur(14px)}
-    nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:inline-flex;align-items:center;gap:7px;font-weight:950;letter-spacing:.01em;white-space:nowrap}
-    .brand img{width:28px;height:28px;object-fit:contain}
-    .brand span{color:var(--green)}
-    .navRight,.languages{display:flex;align-items:center;gap:6px}
-    .chat{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:999px;background:#173a29;color:white;font-size:.78rem;font-weight:900;white-space:nowrap}
-    .lang{min-width:38px;min-height:40px;padding:7px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.75rem;font-weight:850;cursor:pointer}
-    .lang.on{background:var(--ink);border-color:var(--ink);color:white}
-    main{padding:18px 0 32px}
-    .home{position:relative;overflow:hidden;padding:34px;border:1px solid #cfd9cf;border-radius:28px;background:#fffdf8e8;box-shadow:0 24px 64px #2941321c}
-    .home:before{content:'';position:absolute;inset:0 0 auto;height:6px;background:linear-gradient(90deg,#a7463d 0 20%,#d7a92f 20% 40%,#f5f1df 40% 60%,#1e6d4d 60% 80%,#486e78 80%);z-index:2}
-    .intro{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr .9fr;align-items:end;gap:24px;min-height:230px;margin:-10px -10px 28px;padding:38px 34px 32px;border-radius:22px;background-image:linear-gradient(90deg,#faf7f0fc 0%,#faf7f0e8 40%,#faf7f05e 73%,#faf7f018 100%),url('assets/korea-easy-hanji-sansuhwa-hero.svg');background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px #d8dfd6}
-    .eyebrow{display:inline-block;margin-bottom:9px;color:var(--green);font-size:.76rem;font-weight:950;letter-spacing:.08em}
-    .koreanSeal{position:absolute;right:24px;top:23px;display:grid;place-items:center;width:54px;height:54px;border:2px solid #a7463d;border-radius:50%;background:#fff9efbd;color:#a7463d;font-family:serif;font-size:.75rem;font-weight:900;line-height:1.15;text-align:center;transform:rotate(5deg);box-shadow:0 3px 0 #a7463d1f}
-    h1{margin:0;font-size:clamp(2.7rem,7vw,5rem);line-height:.96;letter-spacing:-.055em}
-    .lead{margin:0;color:#53635a;font-size:1rem;line-height:1.65}
-    h2{margin:0 0 14px;font-size:clamp(1.5rem,4vw,2.25rem);letter-spacing:-.035em}
-    .cities{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
-    .city{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:86px;padding:18px;border:1px solid transparent;border-radius:18px;font-size:1.05rem;font-weight:950;box-shadow:0 10px 24px #31483b16;transition:transform .18s ease,box-shadow .18s ease}
-    .city:after{content:'›';font-size:1.65rem;line-height:1}
-    .city:hover,.city:focus-visible{transform:translateY(-2px);box-shadow:0 14px 28px #31483b25}
-    .major{color:white}.local{color:#fff}
-    .city:nth-child(1){background:#294f78;border-color:#1f4267}.city:nth-child(2){background:#287a8a;border-color:#206b79}.city:nth-child(3){background:#39745b;border-color:#2c624b}.city:nth-child(4){background:#c38b34;border-color:#ae7927;color:#251a09}.city:nth-child(5){background:#a95048;border-color:#93443d}.city:nth-child(6){background:#785b6d;border-color:#664b5c}
-    .airports{margin-top:18px;padding-top:18px;border-top:1px solid #d5ddd4}
-    .airports strong{display:block;margin-bottom:10px;color:var(--muted);font-size:.82rem}
-    .airportGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-    .airport{display:flex;align-items:center;justify-content:center;min-height:54px;padding:10px;border:1px solid #cbbf9e;border-radius:14px;background:linear-gradient(180deg,#fffdf8,#f3eee1);color:#405a4b;font-size:.82rem;font-weight:900;text-align:center;box-shadow:inset 0 3px 0 #d7a92f}
-    .essentials{margin-top:18px;padding:18px;border:1px solid #cddfd4;border-radius:18px;background:#f5fbf7}.essentials strong{display:block;margin-bottom:10px;color:var(--green);font-size:.82rem}.essentialGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.essential{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px;padding:13px 16px;border-radius:14px;font-weight:950}.essential:after{content:'›';font-size:1.5rem}.essential.toilet{border:1px solid #efbcb4;background:#fff0ed;color:#8b3027}.essential.pharmacy{border:1px solid #a9d5bd;background:#e8f6ee;color:#146344}.essential small{display:block;margin-top:3px;font-size:.7rem;font-weight:750;opacity:.78}
-    footer{padding:20px 0 calc(26px + env(safe-area-inset-bottom));color:var(--muted);font-size:.78rem;text-align:center}
-    @media(max-width:700px){
-      .home{padding:24px 18px;border-radius:22px}.intro{grid-template-columns:1fr;gap:9px;margin:-7px -3px 22px;padding:30px 24px 26px;min-height:215px}.cities{grid-template-columns:repeat(2,1fr);gap:9px}.city{min-height:72px;padding:14px;font-size:.92rem;border-radius:15px}.airportGrid{grid-template-columns:repeat(2,1fr)}.essentialGrid{grid-template-columns:1fr}
-    }
-    @media(max-width:520px){
-      .wrap{width:calc(100% - 20px)}nav{min-height:60px;gap:7px}.brand{font-size:.86rem;gap:4px}.brand img{width:24px;height:24px}.navRight{gap:4px}.languages{gap:3px}.chat{min-height:38px;padding:7px 9px;font-size:.68rem}.lang{min-width:31px;min-height:38px;padding:5px;font-size:.67rem}main{padding-top:10px}.home{padding:18px 12px 16px}.eyebrow{font-size:.7rem;margin-bottom:7px}h1{font-size:2.15rem}.lead{font-size:.9rem;line-height:1.45;max-width:270px}h2{font-size:1.42rem;margin-bottom:10px}.intro{min-height:190px;margin:-5px -1px 17px;padding:28px 18px 22px;background-image:linear-gradient(90deg,#faf7f0fc 0%,#faf7f0dc 53%,#faf7f03d 100%),url('assets/korea-easy-hanji-sansuhwa-hero.svg');background-position:58% center}.koreanSeal{right:14px;top:17px;width:46px;height:46px;font-size:.66rem}.cities{gap:8px}.city{min-height:64px;padding:12px;font-size:.86rem}.city:after{font-size:1.35rem}.airports{margin-top:14px;padding-top:14px}.airports strong{font-size:.78rem;margin-bottom:8px}.airportGrid{gap:7px}.airport{min-height:48px;padding:8px 6px;font-size:.74rem;line-height:1.25}
-    }
-    @media(max-width:370px){
-      .wrap{width:calc(100% - 14px)}.brand{font-size:.78rem}.chat{font-size:0}.chat:after{content:'Chat';font-size:.68rem}.lang{min-width:28px}.home{padding-left:11px;padding-right:11px}.city{font-size:.78rem}.airport{font-size:.68rem}
-    }
+    :root{--bg:#f4f0e7;--paper:#fffdf8;--ink:#17231d;--muted:#68736c;--green:#1e6d4d;--deep:#143c2b;--line:#d8e0d7;--gold:#d7a92f}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100svh;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background-color:var(--bg);background-image:linear-gradient(180deg,#faf7f0df,#f4f0e7f0),url('assets/korea-easy-hanji-texture.svg');background-size:auto,520px 520px}a{color:inherit;text-decoration:none}button,select{font:inherit}.wrap{width:min(1040px,calc(100% - 28px));margin:auto}
+    header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:#fffdf8ef;backdrop-filter:blur(14px)}nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:inline-flex;align-items:center;gap:7px;font-weight:950;white-space:nowrap}.brand img{width:28px;height:28px;object-fit:contain}.brand span{color:var(--green)}.navRight,.languages{display:flex;align-items:center;gap:6px}.chat{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:999px;background:var(--deep);color:#fff;font-size:.78rem;font-weight:900;white-space:nowrap}.lang{min-width:38px;min-height:40px;padding:7px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.75rem;font-weight:850;cursor:pointer}.lang.on{background:var(--ink);border-color:var(--ink);color:#fff}
+    main{padding:16px 0 34px}.home{overflow:hidden;padding:22px;border:1px solid #cfd9cf;border-radius:28px;background:#fffdf8e8;box-shadow:0 24px 64px #2941321c}.intro{position:relative;overflow:hidden;min-height:155px;padding:29px 31px;border-radius:21px;background-image:linear-gradient(90deg,#faf7f0fc 0%,#faf7f0df 50%,#faf7f03a 100%),url('assets/korea-easy-hanji-sansuhwa-hero.svg');background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px #d8dfd6}.eyebrow{display:inline-block;margin-bottom:8px;color:var(--green);font-size:.76rem;font-weight:950;letter-spacing:.08em}h1{max-width:650px;margin:0;font-size:clamp(2.35rem,6vw,4.6rem);line-height:.96;letter-spacing:-.055em}.lead{max-width:520px;margin:12px 0 0;color:#53635a;font-size:1rem;line-height:1.55}.koreanSeal{position:absolute;right:25px;top:22px;display:grid;place-items:center;width:52px;height:52px;border:2px solid #a7463d;border-radius:50%;background:#fff9efbd;color:#a7463d;font-family:serif;font-size:.74rem;font-weight:900;line-height:1.15;text-align:center;transform:rotate(5deg)}
+    .section{margin-top:22px}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:11px}.sectionHead h2{margin:0;font-size:clamp(1.45rem,4vw,2.15rem);letter-spacing:-.035em}.sectionHead p{margin:0;color:var(--muted);font-size:.84rem}.airportGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.airport{display:flex;align-items:center;justify-content:center;min-height:66px;padding:11px;border:1px solid #cbbf9e;border-radius:14px;background:linear-gradient(180deg,#fffdf8,#f3eee1);color:#405a4b;font-size:.88rem;font-weight:950;text-align:center;box-shadow:inset 0 4px 0 var(--gold);transition:.18s}.airport:hover,.airport:focus-visible{transform:translateY(-2px);border-color:#8e7a43}.airport.primary{background:var(--deep);border-color:var(--deep);box-shadow:inset 0 4px 0 #e5bd4f;color:#fff}
+    .arrival{margin-top:22px;padding:clamp(18px,4vw,30px);border-radius:22px;background:var(--deep);color:#fff}.arrival h2{margin:4px 0 0;font-size:clamp(1.65rem,4.5vw,2.65rem);letter-spacing:-.04em}.arrival .eyebrow{color:#f0cb63}.arrivalIntro{max-width:600px;margin:7px 0 0;color:#d7e7de;line-height:1.55}.steps{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;margin-top:20px}.control{padding:15px;border:1px solid #ffffff29;border-radius:15px;background:#ffffff0b}.control label,.controlTitle{display:block;margin-bottom:9px;color:#f0cb63;font-size:.78rem;font-weight:950}.terminalButtons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.terminal{min-height:46px;border:1px solid #ffffff36;border-radius:11px;background:#ffffff0d;color:#fff;font-weight:950;cursor:pointer}.terminal.on{border-color:#f0cb63;background:#f0cb63;color:#223325}.control select{width:100%;min-height:46px;padding:0 12px;border:1px solid #d8e0d7;border-radius:11px;background:#fff;color:var(--ink);font-weight:850}.selectionNote{margin:12px 0 0;padding:11px 13px;border-radius:11px;background:#0b2b1e;color:#dcebe3;font-size:.84rem;line-height:1.5}.modes{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.mode{display:flex;min-height:142px;flex-direction:column;padding:16px;border:1px solid #d7e0d9;border-radius:15px;background:#fff;color:var(--ink);transition:.18s}.mode:hover,.mode:focus-visible{transform:translateY(-2px);border-color:#e5bd4f}.modeIcon{font-size:1.55rem}.mode strong{margin-top:9px;font-size:1rem}.mode span{margin-top:6px;color:var(--muted);font-size:.79rem;line-height:1.4}.mode em{margin-top:auto;padding-top:12px;color:var(--green);font-size:.75rem;font-style:normal;font-weight:950}.arexHelp{margin-top:10px;border:1px solid #ffffff29;border-radius:12px;background:#ffffff0b}.arexHelp summary{padding:12px 14px;color:#f0cb63;font-size:.84rem;font-weight:950;cursor:pointer}.arexHelp p{margin:0;padding:0 14px 14px;color:#d7e7de;font-size:.84rem;line-height:1.55}
+    .cities{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.city{display:flex;align-items:center;justify-content:space-between;min-height:66px;padding:14px 16px;border-radius:14px;color:#fff;font-size:.92rem;font-weight:950;box-shadow:0 8px 18px #31483b16}.city:after{content:'›';font-size:1.4rem}.city:nth-child(1){background:#294f78}.city:nth-child(2){background:#287a8a}.city:nth-child(3){background:#39745b}.city:nth-child(4){background:#c38b34;color:#251a09}.city:nth-child(5){background:#a95048}.city:nth-child(6){background:#785b6d}footer{padding:20px 0 calc(26px + env(safe-area-inset-bottom));color:var(--muted);font-size:.78rem;text-align:center}
+    @media(max-width:760px){.airportGrid,.modes{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.cities{grid-template-columns:repeat(2,1fr)}.sectionHead{display:block}.sectionHead p{margin-top:4px}}
+    @media(max-width:520px){.wrap{width:calc(100% - 20px)}nav{min-height:60px;gap:7px}.brand{font-size:.86rem;gap:4px}.brand img{width:24px;height:24px}.navRight{gap:4px}.languages{gap:3px}.chat{min-height:38px;padding:7px 9px;font-size:.68rem}.lang{min-width:31px;min-height:38px;padding:5px;font-size:.67rem}main{padding-top:9px}.home{padding:11px;border-radius:20px}.intro{min-height:148px;padding:25px 19px}.eyebrow{font-size:.7rem}h1{max-width:260px;font-size:2.12rem}.lead{max-width:275px;margin-top:9px;font-size:.88rem}.koreanSeal{right:13px;top:15px;width:44px;height:44px;font-size:.64rem}.section{margin-top:18px}.sectionHead h2{font-size:1.38rem}.airportGrid{gap:7px}.airport{min-height:53px;padding:8px 5px;font-size:.75rem;line-height:1.25}.arrival{margin-top:18px;padding:17px 12px;border-radius:17px}.arrival h2{font-size:1.55rem}.arrivalIntro{font-size:.85rem}.steps{margin-top:15px}.control{padding:12px}.modes{gap:7px}.mode{min-height:132px;padding:12px}.mode strong{font-size:.88rem}.mode span{font-size:.72rem}.cities{gap:7px}.city{min-height:58px;padding:11px 12px;font-size:.8rem}}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="wrap">
-      <a class="brand" href="./"><img src="assets/korea-easy-logo.png" alt=""><span>KOREA EASY</span></a>
-      <div class="navRight">
-        <a class="chat" href="account.html">👥 <span data-t="chat">Join Chat</span></a>
-        <div class="languages" aria-label="Language">
-          <button class="lang on" type="button" data-lang="en">EN</button>
-          <button class="lang" type="button" data-lang="ja">日本</button>
-          <button class="lang" type="button" data-lang="zh">中文</button>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main class="wrap">
-    <section class="home">
-      <div class="intro">
-        <div><span class="eyebrow">한국여행 · KOREA EASY</span><h1 data-t="headline">Know before<br>you go.</h1></div>
-        <p class="lead" data-t="lead">Choose your destination and open a dedicated travel guide.</p>
-        <span class="koreanSeal" aria-hidden="true">한국<br>여행</span>
-      </div>
-      <h2 data-t="question">Where are you going?</h2>
-      <div class="cities" aria-label="Choose your destination">
-        <a class="city major" href="SEOUL-EASY.html" data-t="seoul">SEOUL</a>
-        <a class="city major" href="BUSAN-EASY.html" data-t="busan">BUSAN</a>
-        <a class="city major" href="JEJU-EASY.html" data-t="jeju">JEJU</a>
-        <a class="city local" href="GANGNEUNG-EASY.html" data-t="gangneung">GANGNEUNG</a>
-        <a class="city local" href="JEONJU-EASY.html" data-t="jeonju">JEONJU</a>
-        <a class="city local" href="GYEONGJU-EASY.html" data-t="gyeongju">GYEONGJU</a>
-      </div>
-      <div class="essentials">
-        <strong data-t="essentials">Useful near your current location</strong>
-        <div class="essentialGrid">
-          <a class="essential toilet" href="toilet-sos.html"><span>🚻 <span data-t="toilet">Toilet SOS</span><small data-t="toiletDesc">Find a nearby public restroom</small></span></a>
-          <a class="essential pharmacy" href="pharmacy-sos.html"><span>💊 <span data-t="pharmacy">Pharmacy Finder</span><small data-t="pharmacyDesc">Nearby & late-night pharmacies</small></span></a>
-        </div>
-      </div>
-      <div class="airports">
-        <strong data-t="airport">Start from the airport</strong>
-        <div class="airportGrid">
-          <a class="airport" href="incheon-airport-to-seoul.html" data-t="incheon">✈️ Incheon Airport</a>
-          <a class="airport" href="gimpo-airport-guide.html" data-t="gimpo">✈️ Gimpo Airport</a>
-          <a class="airport" href="BUSAN-EASY.html" data-t="gimhae">✈️ Gimhae Airport</a>
-          <a class="airport" href="JEJU-EASY.html" data-t="jejuAirport">✈️ Jeju Airport</a>
-        </div>
-      </div>
+  <header><nav class="wrap"><a class="brand" href="./"><img src="assets/korea-easy-logo.png" alt=""><span>KOREA EASY</span></a><div class="navRight"><a class="chat" href="account.html">👥 <span data-t="chat">Join Chat</span></a><div class="languages" aria-label="Language"><button class="lang on" type="button" data-lang="en">EN</button><button class="lang" type="button" data-lang="ja">日本</button><button class="lang" type="button" data-lang="zh">中文</button></div></div></nav></header>
+  <main class="wrap"><section class="home">
+    <div class="intro"><span class="eyebrow">한국여행 · KOREA EASY</span><h1 data-t="headline">Korea,<br>made easy.</h1><p class="lead" data-t="lead">Choose where you landed. We will show you what to do next.</p><span class="koreanSeal" aria-hidden="true">한국<br>여행</span></div>
+    <section class="section" aria-labelledby="airportTitle"><div class="sectionHead"><h2 id="airportTitle" data-t="airportTitle">Where did you land?</h2><p data-t="airportHint">Start with your arrival airport</p></div><div class="airportGrid"><a class="airport primary" href="#incheonArrival" data-t="incheon">✈️ Incheon Airport</a><a class="airport" href="gimpo-airport-guide.html" data-t="gimpo">✈️ Gimpo Airport</a><a class="airport" href="BUSAN-EASY.html" data-t="gimhae">✈️ Gimhae Airport</a><a class="airport" href="JEJU-EASY.html" data-t="jejuAirport">✈️ Jeju Airport</a></div></section>
+    <section class="arrival" id="incheonArrival" aria-labelledby="arrivalTitle"><span class="eyebrow">INCHEON AIRPORT · T1 & T2</span><h2 id="arrivalTitle" data-t="arrivalTitle">After arriving at Incheon Airport</h2><p class="arrivalIntro" data-t="arrivalIntro">Choose your arrival terminal and destination before selecting transport.</p>
+      <div class="steps"><div class="control"><span class="controlTitle" data-t="terminalLabel">1. Arrival terminal</span><div class="terminalButtons"><button class="terminal on" type="button" data-terminal="t1">T1</button><button class="terminal" type="button" data-terminal="t2">T2</button></div></div><div class="control"><label for="destination" data-t="destinationLabel">2. Destination</label><select id="destination"><option value="seoul" data-t="destSeoul">Seoul Station</option><option value="myeongdong" data-t="destMyeongdong">Myeongdong</option><option value="hongdae" data-t="destHongdae">Hongdae</option><option value="gangnam" data-t="destGangnam">Gangnam</option></select></div></div>
+      <p class="selectionNote" id="selectionNote"></p>
+      <div class="modes" aria-label="Choose transportation"><a class="mode" id="arexMode" href="incheon-airport-to-seoul.html?terminal=t1#arex"><b class="modeIcon">🚆</b><strong data-t="arex">Airport Railroad · AREX</strong><span data-t="arexDesc">Fast rail to Seoul Station and major transfers</span><em data-t="openGuide">Open guide ›</em></a><a class="mode" id="busMode" href="incheon-airport-to-seoul.html?terminal=t1#city-buses"><b class="modeIcon">🚌</b><strong data-t="bus">Airport Bus</strong><span data-t="busDesc">Useful when your hotel is near a bus stop</span><em data-t="openGuide">Open guide ›</em></a><a class="mode" id="rentalMode" href="incheon-airport-to-seoul.html?terminal=t1#rental-car"><b class="modeIcon">🚙</b><strong data-t="rental">Rental Car</strong><span data-t="rentalDesc">Check the correct terminal counter first</span><em data-t="openGuide">Open guide ›</em></a><a class="mode" id="taxiMode" href="incheon-airport-to-seoul.html?terminal=t1#taxi"><b class="modeIcon">🚕</b><strong data-t="taxi">Taxi</strong><span data-t="taxiDesc">Confirm the stand, meter and final destination</span><em data-t="openGuide">Open guide ›</em></a></div>
+      <details class="arexHelp"><summary data-t="whatArex">What is AREX?</summary><p data-t="whatArexDesc">AREX is the airport railway connecting Incheon Airport T2, T1, Gimpo Airport, Hongdae and Seoul Station. Choose an all-stop or express train after checking your destination.</p></details>
     </section>
-  </main>
-  <footer class="wrap">KOREA EASY · Independent Korea travel guide</footer>
+    <section class="section" aria-labelledby="cityTitle"><div class="sectionHead"><h2 id="cityTitle" data-t="cityTitle">Choose a city guide</h2><p data-t="cityHint">Food, transport and places by city</p></div><div class="cities"><a class="city" href="SEOUL-EASY.html" data-t="seoul">SEOUL</a><a class="city" href="BUSAN-EASY.html" data-t="busan">BUSAN</a><a class="city" href="JEJU-EASY.html" data-t="jeju">JEJU</a><a class="city" href="GANGNEUNG-EASY.html" data-t="gangneung">GANGNEUNG</a><a class="city" href="JEONJU-EASY.html" data-t="jeonju">JEONJU</a><a class="city" href="GYEONGJU-EASY.html" data-t="gyeongju">GYEONGJU</a></div></section>
+  </section></main><footer class="wrap">KOREA EASY · Independent Korea travel guide</footer>
   <script>
     const copy={
-      en:{chat:'Join Chat',headline:'Know before<br>you go.',lead:'Choose your destination and open a dedicated travel guide.',question:'Where are you going?',essentials:'Useful near your current location',toilet:'Toilet SOS',toiletDesc:'Find a nearby public restroom',pharmacy:'Pharmacy Finder',pharmacyDesc:'Nearby & late-night pharmacies',airport:'Start from the airport',seoul:'SEOUL',busan:'BUSAN',jeju:'JEJU',gangneung:'GANGNEUNG',jeonju:'JEONJU',gyeongju:'GYEONGJU',incheon:'✈️ Incheon Airport',gimpo:'✈️ Gimpo Airport',gimhae:'✈️ Gimhae Airport',jejuAirport:'✈️ Jeju Airport'},
-      ja:{chat:'チャット',headline:'行く前に<br>知っておこう。',lead:'目的地を選んで、専用の旅行ガイドを開きましょう。',question:'どこへ行きますか？',essentials:'現在地周辺の便利な検索',toilet:'トイレ SOS',toiletDesc:'近くの公衆トイレを探す',pharmacy:'薬局検索',pharmacyDesc:'近くの薬局・深夜薬局',airport:'空港からスタート',seoul:'ソウル',busan:'釜山',jeju:'済州',gangneung:'江陵',jeonju:'全州',gyeongju:'慶州',incheon:'✈️ 仁川空港',gimpo:'✈️ 金浦空港',gimhae:'✈️ 金海空港',jejuAirport:'✈️ 済州空港'},
-      zh:{chat:'聊天',headline:'出发前<br>先了解。',lead:'选择目的地，打开专属旅行指南。',question:'你要去哪里？',essentials:'当前位置附近的实用搜索',toilet:'洗手间 SOS',toiletDesc:'查找附近的公共洗手间',pharmacy:'药店搜索',pharmacyDesc:'附近与深夜药店',airport:'从机场出发',seoul:'首尔',busan:'釜山',jeju:'济州',gangneung:'江陵',jeonju:'全州',gyeongju:'庆州',incheon:'✈️ 仁川机场',gimpo:'✈️ 金浦机场',gimhae:'✈️ 金海机场',jejuAirport:'✈️ 济州机场'}
+      en:{chat:'Join Chat',headline:'Korea,<br>made easy.',lead:'Choose where you landed. We will show you what to do next.',airportTitle:'Where did you land?',airportHint:'Start with your arrival airport',incheon:'✈️ Incheon Airport',gimpo:'✈️ Gimpo Airport',gimhae:'✈️ Gimhae Airport',jejuAirport:'✈️ Jeju Airport',arrivalTitle:'After arriving at Incheon Airport',arrivalIntro:'Choose your arrival terminal and destination before selecting transport.',terminalLabel:'1. Arrival terminal',destinationLabel:'2. Destination',destSeoul:'Seoul Station',destMyeongdong:'Myeongdong',destHongdae:'Hongdae',destGangnam:'Gangnam',arex:'Airport Railroad · AREX',arexDesc:'Fast rail to Seoul Station and major transfers',bus:'Airport Bus',busDesc:'Useful when your hotel is near a bus stop',rental:'Rental Car',rentalDesc:'Check the correct terminal counter first',taxi:'Taxi',taxiDesc:'Confirm the stand, meter and final destination',openGuide:'Open guide ›',whatArex:'What is AREX?',whatArexDesc:'AREX is the airport railway connecting Incheon Airport T2, T1, Gimpo Airport, Hongdae and Seoul Station. Choose an all-stop or express train after checking your destination.',cityTitle:'Choose a city guide',cityHint:'Food, transport and places by city',seoul:'SEOUL',busan:'BUSAN',jeju:'JEJU',gangneung:'GANGNEUNG',jeonju:'JEONJU',gyeongju:'GYEONGJU',note:(t,d)=>`${t.toUpperCase()} arrival · Destination: ${d}. Choose a transport card below.`},
+      ja:{chat:'チャット',headline:'韓国旅行を、<br>かんたんに。',lead:'到着した空港を選ぶと、次にすることがすぐ分かります。',airportTitle:'どの空港に到着しましたか？',airportHint:'到着空港から始めましょう',incheon:'✈️ 仁川空港',gimpo:'✈️ 金浦空港',gimhae:'✈️ 金海空港',jejuAirport:'✈️ 済州空港',arrivalTitle:'仁川空港に到着したら',arrivalIntro:'到着ターミナルと目的地を選んでから、移動手段を選びましょう。',terminalLabel:'1. 到着ターミナル',destinationLabel:'2. 目的地',destSeoul:'ソウル駅',destMyeongdong:'明洞',destHongdae:'弘大',destGangnam:'江南',arex:'空港鉄道・AREX',arexDesc:'ソウル駅と主要乗換駅へ速く移動',bus:'空港バス',busDesc:'ホテルの近くに停留所がある場合に便利',rental:'レンタカー',rentalDesc:'先に正しいターミナルのカウンターを確認',taxi:'タクシー',taxiDesc:'乗り場・メーター・目的地を確認',openGuide:'案内を見る ›',whatArex:'A’REXとは？',whatArexDesc:'AREXは仁川空港T2・T1、金浦空港、弘大、ソウル駅を結ぶ空港鉄道です。目的地を確認し、各駅停車または直通列車を選びます。',cityTitle:'都市ガイドを選ぶ',cityHint:'都市別の交通・食事・観光',seoul:'ソウル',busan:'釜山',jeju:'済州',gangneung:'江陵',jeonju:'全州',gyeongju:'慶州',note:(t,d)=>`${t.toUpperCase()}到着 · 目的地：${d}。下から移動手段を選んでください。`},
+      zh:{chat:'聊天',headline:'韩国旅行，<br>更简单。',lead:'选择抵达机场，立即查看下一步。',airportTitle:'您抵达哪个机场？',airportHint:'从抵达机场开始',incheon:'✈️ 仁川机场',gimpo:'✈️ 金浦机场',gimhae:'✈️ 金海机场',jejuAirport:'✈️ 济州机场',arrivalTitle:'抵达仁川机场后',arrivalIntro:'先选择抵达航站楼和目的地，再选择交通方式。',terminalLabel:'1. 抵达航站楼',destinationLabel:'2. 目的地',destSeoul:'首尔站',destMyeongdong:'明洞',destHongdae:'弘大',destGangnam:'江南',arex:'机场铁路 · AREX',arexDesc:'快速前往首尔站及主要换乘站',bus:'机场巴士',busDesc:'酒店靠近巴士站时很方便',rental:'租车',rentalDesc:'先确认正确航站楼的柜台',taxi:'出租车',taxiDesc:'确认乘车点、计价器和目的地',openGuide:'查看指南 ›',whatArex:'什么是 AREX？',whatArexDesc:'AREX是连接仁川机场T2、T1、金浦机场、弘大和首尔站的机场铁路。确认目的地后选择普通列车或直达列车。',cityTitle:'选择城市指南',cityHint:'各城市的交通、美食与景点',seoul:'首尔',busan:'釜山',jeju:'济州',gangneung:'江陵',jeonju:'全州',gyeongju:'庆州',note:(t,d)=>`${t.toUpperCase()}抵达 · 目的地：${d}。请在下方选择交通方式。`}
     };
-    function setLang(lang){
-      document.documentElement.lang=lang==='zh'?'zh-CN':lang;
-      localStorage.setItem('koreaEasyLang',lang);
-      document.querySelectorAll('.lang').forEach(button=>button.classList.toggle('on',button.dataset.lang===lang));
-      document.querySelectorAll('[data-t]').forEach(node=>node.innerHTML=copy[lang][node.dataset.t]);
-    }
-    document.querySelectorAll('.lang').forEach(button=>button.addEventListener('click',()=>setLang(button.dataset.lang)));
-    setLang(localStorage.getItem('koreaEasyLang')||'en');
-    if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+    let lang=localStorage.getItem('koreaEasyLang')||'en',terminal='t1';const destination=document.getElementById('destination');
+    function refreshSelection(){const label=destination.options[destination.selectedIndex].text;document.getElementById('selectionNote').textContent=copy[lang].note(terminal,label);document.querySelectorAll('.terminal').forEach(b=>b.classList.toggle('on',b.dataset.terminal===terminal));const base=`incheon-airport-to-seoul.html?terminal=${terminal}&destination=${destination.value}`;document.getElementById('arexMode').href=base+'#arex';document.getElementById('busMode').href=base+'#city-buses';document.getElementById('rentalMode').href=base+'#rental-car';document.getElementById('taxiMode').href=base+'#taxi'}
+    function setLang(next){lang=next;document.documentElement.lang=lang==='zh'?'zh-CN':lang;localStorage.setItem('koreaEasyLang',lang);document.querySelectorAll('.lang').forEach(b=>b.classList.toggle('on',b.dataset.lang===lang));document.querySelectorAll('[data-t]').forEach(n=>n.innerHTML=copy[lang][n.dataset.t]);refreshSelection()}
+    document.querySelectorAll('.lang').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));document.querySelectorAll('.terminal').forEach(b=>b.addEventListener('click',()=>{terminal=b.dataset.terminal;refreshSelection()}));destination.addEventListener('change',refreshSelection);setLang(lang);if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
   </script>
-</body>
-</html>
+</body></html>
